@@ -1,0 +1,64 @@
+.thumbnail {
+    width: 60%;
+    background-color: #508dff;
+    box-shadow: 10px 10px 5px rgba(56, 66, 63, 0.685);
+    color:blue;
+    text-align: center; 
+    display: inline-block;
+    margin-bottom: 25px;
+    word-wrap: break-word;
+}
+
+.MEOW {
+    background-color: goldenrod;
+    width: 60%;
+    box-shadow: 10px 10px 5px rgba(56, 66, 63, 0.685);
+    color:yellow;
+    text-align: center; 
+    display: inline-block;
+    margin-bottom: 25px;
+    word-wrap: break-word;
+}
+.centerContainer {
+    text-align: center; 
+}
+ 
+.imgs {
+    width: 100%;
+    display:inline-block;
+}
+.video {
+    border: 20px outset darkcyan;
+    width: 100%;
+    height: 760px;
+    font-size: 40px;
+    margin-bottom: 20px;
+    background-repeat: no-repeat;
+    background-color: black;
+    text-align: center;
+    background-position: center;
+}
+
+.latestThumbnail {
+    width: 100%;
+    background-color: #508dff;
+    box-shadow: 10px 10px 5px rgba(56, 66, 63, 0.685);
+    color:blue;
+    text-align: center; 
+    display: inline-block;
+    margin-bottom: 25px;
+    word-wrap: break-word;
+}
+/*---------------------------------------------------------------------------------------videos--------------------------------------*/
+.PIANO {
+    background-image: url("../images/v1.png");
+}
+.Glitches {
+    background-image: url("../images/v2.png");
+}
+.JAKE {
+    background-image: url("../images/v3.png");
+}
+/* .playButton {
+    background-image: url("../images/playbutton2.png");
+} */

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Its Over</title>
+</head>
+<style>
+    body {
+        background-color: black;
+    }
+</style>
+
+<body>
+    <canvas id="canvas" height="760" width="1500"></canvas>
+    <script>
+        let ctx = document.getElementById("canvas").getContext("2d");
+        class stars {
+            constructor() {
+                this.x = Math.floor(Math.random() * 1600);
+                this.y = Math.floor(Math.random() * 760);
+                this.width = 1;
+                this.height = 1;
+            }
+        }
+        class testObject {
+            constructor(x, y) {
+                this.isDead = false;
+                this.x = x;
+                this.y = y;
+                this.width = 60;
+                this.height = 60;
+                this.img = new Image();
+            }
+            spawn() {
+                this.img.src = "img/robotBad.bmp"
+                ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
+            }
+            collide() {
+                if (player.swords[0] != undefined) {
+                    let sword = player.swords[0]
+                    if (sword.x < this.x + this.width &&
+                        sword.x + sword.width > this.x &&
+                        sword.y < this.y + this.height &&
+                        sword.y + sword.height > this.y) {
+                        return true
+                    }
+
+                    return false;
+                }
+
+            }
+            collidePlayer() {
+                for (index in game.obj) {
+                    if (player.x < this.x + this.width &&
+                        player.x + player.width > this.x &&
+                        player.y < this.y + this.height &&
+                        player.y + player.height > this.y) {
+                        return true
+                    }
+
+                    return false;
+                }
+            }
+        }
+        let game = {
+            ticks: 0,
+            width: 1500,
+            height: 760,
+            stars: [
+                new stars()
+            ],
+            obj: [
+                new testObject(1300, 0),
+                new testObject(1300, 120),
+                new testObject(1300, 240),
+                new testObject(1300, 360),
+                new testObject(1300, 480)
+            ],
+            draw: function () {
+                ctx.fillStyle = "black";
+                ctx.fillRect(0, 0, this.width, this.height);
+            },
+            drawStars: function () {
+                for (index in this.stars) {
+                    let obj = this.stars[index];
+                    let x = obj.x;
+                    let y = obj.y;
+                    ctx.fillStyle = "white";
+                    ctx.fillRect(x, y, obj.width, obj.height);
+                }
+            }
+        }
+
+
+        let player = {
+            isDead: false,
+            x: 50,
+            y: 380,
+            width: 60,
+            height: 60,
+            swords: [],
+            img: new Image(),
+            spawn: function () {
+                this.img.src = "img/guy.bmp"
+                ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
+            },
+            move: function (key) {
+                if (key == 87) {
+                    this.y -= 8;
+                } else if (key == 65) {
+                    this.x -= 8;
+                } else if (key == 83) {
+                    this.y += 8;
+                } else if (key == 68) {
+                    this.x += 8;
+                }
+
+            }
+        }
+        class sword {
+            constructor() {
+                this.x = player.x + 20;
+                this.y = player.y + 25;
+                this.width = 100;
+                this.height = 20;
+                this.img = new Image();
+            }
+            equip() {
+                this.img.src = "img/sword.bmp"
+                ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
+            }
+
+        }
+        function createMore() {
+            for (let i = 0; i < 5000; i++) {
+                game.stars.push(new stars())
+            }
+        }
+        createMore();
+        function update() {
+            for (let keyCode in held) {
+                player.move(keyCode);
+            }
+            for (index in game.obj) {
+                if (game.obj[index].isDead == false) {
+                    if (game.obj[index].collide()) {
+                        console.log("c")
+                        game.obj[index].isDead = true;
+                    }
+                }
+            }
+            for (index in game.obj) {
+                if (game.obj[index].isDead == false) {
+                    if (game.obj[index].collidePlayer()) {
+                        console.log("oof");
+                        player.isDead = true;
+                    }
+                }
+
+            }
+        }
+        function tick() {
+            game.draw();
+            game.drawStars();
+            if (player.isDead != true) {
+                player.spawn();
+                player.swords.unshift(new sword())
+                player.swords[0].equip();
+            }
+            for (index in game.obj) {
+                if (game.obj[index] != undefined && game.obj[index].isDead == false) {
+                    game.obj[index].spawn()
+                }
+            }
+            update()
+            game.ticks += 1;
+            window.setTimeout("tick()", 1000 / Infinity);
+        }
+        let held = {}
+        window.addEventListener("keydown", function (info) {
+            held[event.keyCode] = true;
+        }, false);
+
+        window.addEventListener("keyup", function (info) {
+            delete held[event.keyCode];
+        }, false)
+        tick();
+    </script>
+</body>
+
+</html>

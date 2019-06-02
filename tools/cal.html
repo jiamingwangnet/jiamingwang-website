@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../css/main.css">
+    <title>cal</title>
+    <style>
+        button {
+            width: 90px;
+            height: 90px;
+            font-size: 50px;
+            border-color: blue;
+        }
+
+        .color {
+            width: 90px;
+            height: 90px;
+            font-size: 50px;
+            background-image: linear-gradient(to bottom right, rgb(0, 247, 255), rgb(8, 175, 204), rgb(0, 102, 255), rgb(8, 175, 204), rgb(0, 247, 255));
+            border-color: blue;
+        }
+
+
+        input {
+            width: 369px;
+            height: 90px;
+            font-size: 50px;
+            border-color: blue;
+        }
+
+        body {
+            background-image: linear-gradient(to bottom right, rgb(0, 247, 255), rgb(8, 175, 204), rgb(0, 102, 255), rgb(8, 175, 204), rgb(0, 247, 255));
+            background-repeat: no-repeat;
+        }
+        input:disabled {
+            background-color: aquamarine;
+        }
+
+        .op {
+            background-color: cyan;
+            border-color: blue;
+        }
+
+    </style>
+</head>
+
+<body style="overflow: hidden; background-attachment: fixed;"> 
+    <div style="position: relative; left: 650px; overflow: hidden;">
+            <input id="input" disabled>
+
+            <br>
+            <button class="color" id="1">1</button>
+            <button class="color" id="2">2</button>
+            <button class="color" id="3">3</button>
+            <button style="background-color: darkcyan;" id="calculate">=</button>
+            <br>
+            <button class="color" id="4">4</button>
+            <button class="color" id="5">5</button>
+            <button class="color" id="6">6</button>
+            <button style="background-color: red;" id="back">
+                <--</button> <br>
+                    <button class="color" id="7">7</button>
+                    <button class="color" id="8">8</button>
+                    <button class="color" id="9">9</button>
+                    <br>
+                    <button class="color" id="0">0</button>
+                    <button id="plus" class="op">+</button>
+                    <button id="clear" style="background-color: goldenrod;">C</button>
+                    <br>
+                    <button id="minus" class="op">-</button>
+                    <button id="times" class="op">*</button>
+                    <button id="divide" class="op">/</button>
+                    <br>
+                    <a href="../tools.html">BACK</a>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <script src="js/cal.js"></script>
+</body>
+
+</html>

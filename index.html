@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron:400,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="css/lib/NES.css-master/css/nes.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/model.js"></script>
+    <script src="js/pic.js"></script>
+    <script src="js/time.js"></script>
+    <script src="js/names.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <title>JIAMING WANG</title>
+    <link rel="shortcut icon" href="images/icon.ico" type="image/x-icon">
+</head>
+
+<body onload="getPic(); getName(); time();">
+    <div class="title">
+        <div class="animation1"></div>
+        <br>
+        <div class="animation2"></div>
+        <p class="titleText">JIAMING WANG</p>
+        <br>
+        <p class="titleText small">Team Bobler</p>
+    </div>
+    <div class="nav">
+
+        <a href="index.html" class="center"><i class="fas fa-home colour"></i> Home</a>
+        <button  onclick="displayModel2()" class="downButton"><i class="fas fa-caret-down down"></i></button>
+        <div class="modelBack">
+            <div class="model2">
+                <button class="exit" onclick="hideModel2()">X</button>
+                <br>
+                <a href="tehNews.html"><i class="fas fa-newspaper colour"></i> News</a>
+                <br>
+                <a href="games.html" ><i class="fas fa-gamepad colour"></i> Games</a>
+                <br>
+                <a href="random.html" ><i class="fas fa-dice-four colour"></i> Random Things</a>
+                <br>
+                <a href="comments.htmlne"><i class="fas fa-comments colour"></i> Chat</a>
+                <br>
+                <a href="videos.html" ><i class="fas fa-video colour"></i> Videos</a>
+                <br>
+                <a href="tools.html"><i class="fas fa-wrench colour"></i> Tools</a>
+                <br>
+                <a href="hamish.html" ><i class="fas fa-paw colour"></i> Hamish</a>
+                <br>
+                <a href="school.html"><i class="fas fa-school colour"></i> School</a>
+            </div>
+        </div>
+        <a href="tehNews.html" class="none"><i class="fas fa-newspaper colour"></i> News</a>
+
+        <a href="games.html" class="none"><i class="fas fa-gamepad colour"></i> Games</a>
+
+        <a href="random.html" class="none"><i class="fas fa-dice-four colour"></i> Random Things</a>
+
+        <a href="comments.html" class="none"><i class="fas fa-comments colour"></i> Chat</a>
+
+        <a href="videos.html" class="none"><i class="fas fa-video colour"></i> Videos</a>
+
+        <a href="tools.html" class="none"><i class="fas fa-wrench colour"></i> Tools</a>
+
+        <a href="hamish.html" class="none"><i class="fas fa-paw colour"></i> Hamish</a>
+
+        <a href="school.html" class="none"><i class="fas fa-school colour"></i> School</a>
+        <i class="fas fa-bars menuIcon" onclick="displayModel()"></i>
+    </div>
+    <!-- <div id="notifications">
+    </div>
+    <script src="js/notify.js"></script> -->
+    <div class="introduction">Welcome user! My name is Jiaming, welcome to my website. There is many games you can
+        play, along with videos and news (my bad writing). But weird stuff do happen, so I put a random page just for
+        that! Have fun!
+    </div>
+    <br>
+    <br>
+    <div class="profile">
+        <img src="images/defaut.bmp" alt="your image" class="image">
+        <span class="name">Name</span>
+    </div>
+    <div class="model">
+        <button class="exit" onclick="hideModel()">X</button>
+        <img src="images/defaut.bmp" alt="your image" class="modelImage">
+        <div class="divButton">
+            <input type='file' onchange="readURL(this);" class="choosePicInput" value="choose image" />
+        </div>
+        <h2 class="name">name</h2>
+        <button onclick="names()" class="button">change name</button>
+    </div>
+    <div class="time">
+        <h1 id="time"></h1>
+    </div>
+    <div class="datetime"></div>
+
+    <div class="welcome">
+        <h2>Welcome to Jiaming's Home Page<br><br><br>
+            <h5>hello I am Hu Zi</h5>
+            <a href="TB_code/idea/Tanya/learn/HTML/hu_zi.html"><img src="images/huzi.bmp" alt="hu zi" class='huzi'></a>
+        </h2>
+    </div>
+    <div class="board">
+        <div class="boardContainer">
+            <div class="center">
+                <h3>HELLO:</h3>
+                <img src="images/gifs/hello.gif" class="helloGif">
+                <h2>I am Jiaming Wang</h2>
+            </div>
+
+            <i class="far fa-gem diamond"></i>
+            <b>
+                <p>diamonds</p>
+            </b>
+        </div>
+        <div class="boardContainer">
+            <h1>ok, lets get to the good stuff</h1>
+            <ul>
+                <li>I haven't played games for years</li>
+                <li>I like cats</li>
+                <img src="images/ipad stuff 002.JPG" alt="cat" class="catPics">
+                <br><br><br><br>
+                <h2>cats are cool</h2>
+                <li>coding is the best</li>
+                <img src="images/ipad stuff 024.JPG" alt="code" class="catPics">
+                <h1>THE END</h1>
+            </ul>
+        </div>
+    </div>
+    </div>
+    <div class="footer">
+        <b>
+            <h3 id="myVisits"></h3>
+
+            <h5>version 2.0.0 pre 13</h5>
+        </b>
+    </div>
+</body>
+
+</html>

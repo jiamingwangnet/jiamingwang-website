@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Games</title>
+	<link rel="shortcut icon" href="images/icon.ico" type="image/x-icon">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link href="https://fonts.googleapis.com/css?family=Orbitron:400,900" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+		integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<link href="css/lib/NES.css-master/css/nes.css" rel="stylesheet" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="js/model.js"></script>
+	<script src="js/pic.js"></script>
+	<script src="js/time.js"></script>
+	<script src="js/names.js"></script>
+	<link rel="stylesheet" href="css/display.css">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+
+<body onload="getPic(); getName();">
+	<div class="nav">
+
+		<a href="index.html" class="center"><i class="fas fa-home colour"></i> Home</a>
+		<button  onclick="displayModel2()" class="downButton"><i class="fas fa-caret-down down"></i></button>
+		<div class="modelBack">
+			<div class="model2">
+					<button class="exit" onclick="hideModel2()">X</button>
+					<br>
+					<a href="tehNews.html"><i class="fas fa-newspaper colour"></i> News</a>
+					<br>
+					<a href="games.html" ><i class="fas fa-gamepad colour"></i> Games</a>
+					<br>
+					<a href="random.html" ><i class="fas fa-dice-four colour"></i> Random Things</a>
+					<br>
+					<a href="comments.htmlne"><i class="fas fa-comments colour"></i> Chat</a>
+					<br>
+					<a href="videos.html" ><i class="fas fa-video colour"></i> Videos</a>
+					<br>
+					<a href="tools.html"><i class="fas fa-wrench colour"></i> Tools</a>
+					<br>
+					<a href="hamish.html" ><i class="fas fa-paw colour"></i> Hamish</a>
+			</div>
+		</div>
+		<a href="tehNews.html" class="none"><i class="fas fa-newspaper colour"></i> News</a>
+
+		<a href="games.html" class="none"><i class="fas fa-gamepad colour"></i> Games</a>
+
+		<a href="random.html" class="none"><i class="fas fa-dice-four colour"></i> Random Things</a>
+
+		<a href="comments.html" class="none"><i class="fas fa-comments colour"></i> Chat</a>
+
+		<a href="videos.html" class="none"><i class="fas fa-video colour"></i> Videos</a>
+
+		<a href="tools.html" class="none"><i class="fas fa-wrench colour"></i> Tools</a>
+
+		<a href="hamish.html" class="none"><i class="fas fa-paw colour"></i> Hamish</a>
+		<i class="fas fa-bars menuIcon" onclick="displayModel()"></i>
+	</div>
+	<div class="model">
+		<button class="exit" onclick="hideModel()">X</button>
+		<img src="images/defaut.bmp" alt="your image" class="modelImage">
+		<div class="divButton">
+			<input type='file' onchange="readURL(this);" class="choosePicInput" value="choose image" />
+		</div>
+		<h2 class="name">name</h2>
+		<button onclick="names()" class="button">change name</button>
+	</div>
+	<div class="newTitles">
+		<h1>some games I made</h1>
+	</div>
+	<div class="introduction blue">
+		some really bad games. Nothing really cool here. Just saying...
+	</div>
+	<div class="long" onclick="sayHi()"></div>
+	<div class="centerContainer">
+			<a href="games/game.html">
+				<div class="thumbnail">
+					<img src="images/Game.png" class="imgs">
+					<a href="games/game.html">
+						<h3>click on diamond</h3>
+						<div class="playButton">PLAY</div>
+					</a>
+					<p>
+						<br> click on the diamonds but not on the dirt!
+					</p>
+				</div>
+			</a>
+			<a href="games/game2.html">
+				<div class="thumbnail">
+					<img src="images/j maker.png" class="imgs">
+					<a href="games/game2.html">
+						<h3>jewelry maker</h3>
+						<div class="playButton">PLAY</div>
+					</a>
+					<p>
+						<br> make a jewelry by clicking on buttons!
+					</p>
+				</div>
+			</a>
+	
+			<a href="games/new_game.html">
+				<div class="thumbnail">
+					<img src="images/new_game.png" class="imgs">
+					<a href="games/new_game.html">
+						<h3>match fruits</h3>
+						<div class="playButton">PLAY</div>
+					</a>
+					<p>
+						<br> match the same fruits togeter by clicking to win!
+					</p>
+				</div>
+			</a>
+			<a href="games/game5.html">
+				<div class="thumbnail">
+					<img src="images/game5.png" class="imgs">
+					<a href="games/game5.html">
+						<h3>match fruits</h3>
+						<div class="playButton">PLAY</div>
+					</a>
+					<p>
+						<br> match the same fruits togeter by clicking to win!
+					</p>
+				</div>
+			</a>
+			<a href="games/game5.html">
+				<div class="thumbnail">
+					<img src="images/game5.png" class="imgs">
+					<a href="games/game5.html">
+						<h3>match fruits</h3>
+						<div class="playButton">PLAY</div>
+					</a>
+					<p>
+						<br> match the same fruits togeter by clicking to win!
+					</p>
+				</div>
+			</a>
+		</div>
+	<div class="footer">
+		<b>
+			<h3 id="myVisits"></h3>
+
+			<h5>version 2.0.0 pre 12</h5>
+		</b>
+	</div>
+	<script>
+
+	</script>
+</body>
+
+</html>
