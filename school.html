@@ -9,6 +9,19 @@
     <link href="https://fonts.googleapis.com/css?family=Orbitron:400,900" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
         integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
     <link href="css/lib/NES.css-master/css/nes.css" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/model.js"></script>
@@ -19,60 +32,70 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body onload="getPic(); getName();">
-    <div class="nav">
+        <div class="nav">
 
-        <a href="index.html" class="center"><i class="fas fa-home colour"></i> Home</a>
-        <button  onclick="displayModel2()" class="downButton"><i class="fas fa-caret-down down"></i></button>
-        <div class="modelBack">
-            <div class="model2">
-                <button class="exit" onclick="hideModel2()">X</button>
-                <br>
-                <a href="tehNews.html"><i class="fas fa-newspaper colour"></i> News</a>
-                <br>
-                <a href="games.html" ><i class="fas fa-gamepad colour"></i> Games</a>
-                <br>
-                <a href="random.html" ><i class="fas fa-dice-four colour"></i> Random Things</a>
-                <br>
-                <a href="comments.htmlne"><i class="fas fa-comments colour"></i> Chat</a>
-                <br>
-                <a href="videos.html" ><i class="fas fa-video colour"></i> Videos</a>
-                <br>
-                <a href="tools.html"><i class="fas fa-wrench colour"></i> Tools</a>
-                <br>
-                <a href="hamish.html" ><i class="fas fa-paw colour"></i> Hamish</a>
-                <br>
-                <a href="school.html" ><i class="fas fa-school colour"></i> School</a>
+                <a href="index.html" class="center"><i class="fas fa-home colour"></i> Home</a>
+                <div class="modelBack">
+                    <div class="model2">
+                        <button class="exit" onclick="hideModel2()">X</button>
+                        <br>
+                        <a href="tehNews.html"><i class="fas fa-newspaper colour"></i> News</a>
+                        <br>
+                        <a href="games.html"><i class="fas fa-gamepad colour"></i> Games</a>
+                        <br>
+                        <a href="random.html"><i class="fas fa-dice-four colour"></i> Random Things</a>
+                        <br>
+                        <a href="comments.htmlne"><i class="fas fa-comments colour"></i> Chat</a>
+                        <br>
+                        <a href="videos.html"><i class="fas fa-video colour"></i> Videos</a>
+                        <br>
+                        <a href="tools.html"><i class="fas fa-wrench colour"></i> Tools</a>
+                        <br>
+                        <a href="hamish.html"><i class="fas fa-paw colour"></i> Hamish</a>
+                        <br>
+                        <a href="school.html"><i class="fas fa-school colour"></i> School</a>
+                    </div>
+                </div>
+                <a href="tehNews.html" class="none"><i class="fas fa-newspaper colour"></i> News</a>
+        
+                <a href="games.html" class="none"><i class="fas fa-gamepad colour"></i> Games</a>
+        
+                <a href="random.html" class="none"><i class="fas fa-dice-four colour"></i> Random Things</a>
+        
+                <a href="comments.html" class="none"><i class="fas fa-comments colour"></i> Chat</a>
+        
+                <a href="videos.html" class="none"><i class="fas fa-video colour"></i> Videos</a>
+        
+                <a href="tools.html" class="none"><i class="fas fa-wrench colour"></i> Tools</a>
+        
+                <a href="hamish.html" class="none"><i class="fas fa-paw colour"></i> Hamish</a>
+        
+                <a href="school.html" class="none"><i class="fas fa-school colour"></i> School</a>
+                <i class="fas fa-bars menuIcon down" onclick="displayModel2()"></i>
+                <i class="fas fa-user-cog menuIcon" onclick="displayModel()"></i>
             </div>
-        </div>
-        <a href="tehNews.html" class="none"><i class="fas fa-newspaper colour"></i> News</a>
-
-        <a href="games.html" class="none"><i class="fas fa-gamepad colour"></i> Games</a>
-
-        <a href="random.html" class="none"><i class="fas fa-dice-four colour"></i> Random Things</a>
-
-        <a href="comments.html" class="none"><i class="fas fa-comments colour"></i> Chat</a>
-
-        <a href="videos.html" class="none"><i class="fas fa-video colour"></i> Videos</a>
-
-        <a href="tools.html" class="none"><i class="fas fa-wrench colour"></i> Tools</a>
-
-        <a href="hamish.html" class="none"><i class="fas fa-paw colour"></i> Hamish</a>
-
-        <a href="school.html" class="none"><i class="fas fa-school colour"></i> School</a>
-        <i class="fas fa-bars menuIcon" onclick="displayModel()"></i>
-    </div>
-    <div class="model">
-        <button class="exit" onclick="hideModel()">X</button>
-        <img src="images/defaut.bmp" alt="your image" class="modelImage">
-        <div class="divButton">
-            <input type='file' onchange="readURL(this);" class="choosePicInput" value="choose image" />
-        </div>
-        <h2 class="name">name</h2>
-        <button onclick="names()" class="button">change name</button>
-    </div>
+            <div class="model">
+                    <button class="exit" onclick="hideModel()">X</button>
+                    <img src="images/defaut.bmp" alt="your image" class="modelImage">
+                    <!-- <div class="divButton">
+                         <input type='file' onchange="readURL(this);" class="choosePicInput" value="choose image" />
+                        
+                    </div> -->
+                    <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                            </div>
+                            <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="inputGroupFile03" onchange="readURL(this);" aria-describedby="inputGroupFileAddon03">
+                              <label class="custom-file-label" for="inputGroupFile03">Find Image</label>
+                            </div>
+                          </div>
+                    
+                    <h2 class="name">name</h2>
+                    <button onclick="names()" class="button">change name</button>
+                </div>
 
     <div class="introduction blue">
-        <p>My school word (mostly homework)</p>
+        <p>My school work (mostly homework)</p>
     </div>
 
     <div class="centerContainer">

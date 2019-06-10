@@ -300,15 +300,17 @@ a {
     font-size: 30px;
 }
 
-.board {
-    text-align: center; 
-}
+/* .board {
+    
+    
+} */
 .darkerblue {
     color: #05155c;
 }
 .boardContainer {
     padding: 20px;
-    width: 90%;
+    width: 100%;
+    height: auto;
     display: inline-block;
     background-color: #0084fff5;
     border-radius: 10px; 
@@ -316,6 +318,14 @@ a {
     background-position: center; 
     margin-bottom: 25px;
     margin-top: 25px;
+
+}
+.textLeft {
+    float:left;
+}
+
+.textRight {
+    float:right;
 }
 
 .meowButton {
@@ -329,13 +339,17 @@ a {
     background-color: rgb(0, 217, 255);
 }
 
-.catPics {
-    width: 100%;
+.catPicsRight {
+    width: 50%;
     height: auto;
+    float:right;
 }
-.helloGif {
-    width: 60%;
+.catPicsLeft {
+    width: 50%;
+    height: auto;
+    float:left;
 }
+
 .footer {
     text-align: center;
     color: black; 
@@ -371,7 +385,7 @@ a {
     border: 40px solid blue; 
     font-size: 70%;
     padding: 20px;
-    color: rgb(0, 255, 242);
+    color: #006cf9
 }
 .goldBack {
     background-color: goldenrod;
@@ -529,6 +543,32 @@ a {
         background-color: goldenrod;
     }
 }
+
+@media screen and (max-width:886px) {
+    .catPicsLeft {
+        width: 100%;
+        height: auto;
+        float:left;
+    }
+    .catPicsRight {
+        width: 100%;
+        height: auto;
+        float:right;
+    }
+}
+
+/* @media screen and (max-width:1024px) {
+    .catPicsLeft {
+        width: 30%;
+        height: auto;
+        float:left;
+    }
+    .catPicsRight {
+        width: 30%;
+        height: auto;
+        float:right;
+    }
+} */
 /*-----------------------------------------------animations-------------------------------------------*/
 .animation1 {
     position: relative;

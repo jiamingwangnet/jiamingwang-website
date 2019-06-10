@@ -219,7 +219,7 @@ label {
   margin-bottom: 0.5rem;
 }
 
-button {
+/* button {
   border-radius: 0;
 }
 
@@ -262,7 +262,7 @@ button::-moz-focus-inner,
 button:focus {
   outline: 1px dotted;
   outline: 5px auto -webkit-focus-ring-color;
-}
+} */
 
 input[type="radio"],
 input[type="checkbox"] {
@@ -357,12 +357,12 @@ body {
   -webkit-font-smoothing: none;
 }
 
-button,
+/* button,
 [type="button"],
 [type="reset"],
 [type="submit"] {
   -webkit-appearance: none;
-}
+} */
 
 @keyframes blink {
   0% {
@@ -373,7 +373,7 @@ button,
   }
 }
 
-.btn {
+/* .btn {
   position: relative;
   display: inline-block;
   padding: 10px 12px;
@@ -487,7 +487,7 @@ button,
 .btn.is-error:active {
   box-shadow: inset 4px 4px #8c2022;
 }
-
+ */
 .container {
   position: relative;
   padding: 1.5rem 2rem;
