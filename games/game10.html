@@ -32,7 +32,7 @@
                 this.img = new Image();
             }
             spawn() {
-                this.img.src = "img/robotBad.bmp"
+                this.img.src = "img/robotBad.png"
                 ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
             }
             collide() {
@@ -74,7 +74,9 @@
                 new testObject(1300, 120),
                 new testObject(1300, 240),
                 new testObject(1300, 360),
-                new testObject(1300, 480)
+                new testObject(1300, 480),
+                new testObject(1300, 600),
+                new testObject(1300, 700)
             ],
             draw: function () {
                 ctx.fillStyle = "black";
@@ -101,7 +103,7 @@
             swords: [],
             img: new Image(),
             spawn: function () {
-                this.img.src = "img/guy.bmp"
+                this.img.src = "img/guy.png"
                 ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
             },
             move: function (key) {
@@ -120,13 +122,13 @@
         class sword {
             constructor() {
                 this.x = player.x + 20;
-                this.y = player.y + 25;
+                this.y = player.y + 30;
                 this.width = 100;
-                this.height = 20;
+                this.height = 15;
                 this.img = new Image();
             }
             equip() {
-                this.img.src = "img/sword.bmp"
+                this.img.src = "img/sword.png"
                 ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
             }
 

@@ -42,49 +42,8 @@
     </div>
     <div class="nav">
 
-        <a href="index.html" class="center"><i class="fas fa-home colour"></i> Home</a>
-        <div class="modelBack">
-            <div class="model2">
-                <button class="exit" onclick="hideModel2()">X</button>
-                <br>
-                <a href="tehNews.html"><i class="fas fa-newspaper colour"></i> News</a>
-                <br>
-                <a href="games.html"><i class="fas fa-gamepad colour"></i> Games</a>
-                <br>
-                <a href="random.html"><i class="fas fa-dice-four colour"></i> Random Things</a>
-                <br>
-                <a href="comments.htmlne"><i class="fas fa-comments colour"></i> Chat</a>
-                <br>
-                <a href="videos.html"><i class="fas fa-video colour"></i> Videos</a>
-                <br>
-                <a href="tools.html"><i class="fas fa-wrench colour"></i> Tools</a>
-                <br>
-                <a href="hamish.html"><i class="fas fa-paw colour"></i> Hamish</a>
-                <br>
-                <a href="school.html"><i class="fas fa-school colour"></i> School</a>
-            </div>
-        </div>
-        <a href="tehNews.html" class="none"><i class="fas fa-newspaper colour"></i> News</a>
-
-        <a href="games.html" class="none"><i class="fas fa-gamepad colour"></i> Games</a>
-
-        <a href="random.html" class="none"><i class="fas fa-dice-four colour"></i> Random Things</a>
-
-        <a href="comments.html" class="none"><i class="fas fa-comments colour"></i> Chat</a>
-
-        <a href="videos.html" class="none"><i class="fas fa-video colour"></i> Videos</a>
-
-        <a href="tools.html" class="none"><i class="fas fa-wrench colour"></i> Tools</a>
-
-        <a href="hamish.html" class="none"><i class="fas fa-paw colour"></i> Hamish</a>
-
-        <a href="school.html" class="none"><i class="fas fa-school colour"></i> School</a>
-        <i class="fas fa-bars menuIcon down" onclick="displayModel2()"></i>
-        <i class="fas fa-user-cog menuIcon" onclick="displayModel()"></i>
+        <script src="js/nav.js"></script>
     </div>
-    <!-- <div id="notifications">
-    </div>
-    <script src="js/notify.js"></script> -->
     <div class="introduction">Welcome user! My name is Jiaming, welcome to my website. There is many games you can
         play, along with videos and news (my bad writing). But weird stuff do happen, so I put a random page just for
         that! Have fun!
@@ -94,26 +53,31 @@
     <div class="profile">
         <img src="images/defaut.bmp" alt="your image" class="image">
         <span class="name">Name</span>
+        <h1>notifications</h1>
+        <div id="notifications">
+        </div>
+        <script src="js/notify.js"></script>
     </div>
     <div class="model">
-            <button class="exit" onclick="hideModel()">X</button>
-            <img src="images/defaut.bmp" alt="your image" class="modelImage">
-            <!-- <div class="divButton">
+        <button class="exit" onclick="hideModel()">X</button>
+        <img src="images/defaut.bmp" alt="your image" class="modelImage">
+        <!-- <div class="divButton">
                  <input type='file' onchange="readURL(this);" class="choosePicInput" value="choose image" />
                 
             </div> -->
-            <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                    </div>
-                    <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="inputGroupFile03" onchange="readURL(this);" aria-describedby="inputGroupFileAddon03">
-                      <label class="custom-file-label" for="inputGroupFile03">Find Image</label>
-                    </div>
-                  </div>
-            
-            <h2 class="name">name</h2>
-            <button onclick="names()" class="button">change name</button>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+            </div>
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="inputGroupFile03" onchange="readURL(this);"
+                    aria-describedby="inputGroupFileAddon03">
+                <label class="custom-file-label" for="inputGroupFile03">Find Image</label>
+            </div>
         </div>
+
+        <h2 class="name">name</h2>
+        <button onclick="names()" class="button">change name</button>
+    </div>
     <div class="time">
         <h1 id="time"></h1>
     </div>
@@ -141,40 +105,41 @@
 
     </div>
     <div class="boardContainer">
-            <img src="images/ipad stuff 002.JPG" alt="cat" class="catPicsLeft">
+        <img src="images/ipad stuff 002.JPG" alt="cat" class="catPicsLeft">
         <div class="textRight">
-                <h1>time for... <br>the good stuff</h1>
-                <ul>
-                    <li>I haven't played games for years</li>
-                    <li>I like cats</li>
-                    <li>cats are cool</li>
-                    <li>coding is the best</li>
-                    <li>I can't live without technology</li>
-                    <li>I speak chinese</li>
-                    <li>您好，我是嘉铭</li>
-                    <li>I have a cousin</li>
-                </ul>
-                <p>My cat is a fat one.</p>
+            <h1>time for... <br>the good stuff</h1>
+            <ul>
+                <li>I haven't played games for years</li>
+                <li>I like cats</li>
+                <li>cats are cool</li>
+                <li>coding is the best</li>
+                <li>I can't live without technology</li>
+                <li>I speak chinese</li>
+                <li>您好，我是嘉铭</li>
+                <li>I have a cousin</li>
+            </ul>
+            <p>My cat is a fat one.</p>
 
         </div>
-        
+
         <!-- <img src="images/ipad stuff 024.JPG" alt="code" class="catPics"> -->
-       
-        
+
+
+    </div>
+    </div>
+    <div class="boardContainer">
+        <img src="images/ipad stuff 024.JPG" alt="code" class="catPicsRight">
+        <div class="textLeft">
+            <h1>I code stuff</h1>
+            <p>I made this website because I wanted to. <br> I code games and soon I will play around with<br>databases.
+            </p>
         </div>
-        </div>
-        <div class="boardContainer">
-                <img src="images/ipad stuff 024.JPG" alt="code" class="catPicsRight">
-            <div class="textLeft">
-                    <h1>I code stuff</h1>
-                    <p>I made this website because I wanted to. <br> I code games and soon I will play around with<br>databases.</p>
-            </div>
-            
-            
-           
-            
-            </div>
-            </div>
+
+
+
+
+    </div>
+    </div>
     </div>
     <div class="footer">
         <b>

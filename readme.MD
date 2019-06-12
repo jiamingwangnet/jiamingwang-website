@@ -6,4 +6,6 @@ There will be updates
 * new layout
 * BootStrap
 * New games coming out
+* In site notifications
+* finished News page
 :smiley:

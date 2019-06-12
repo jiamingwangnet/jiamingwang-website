@@ -124,8 +124,7 @@ a {
 }
 .profile {
     background-color: blue;
-    background-color: blue;
-    height: 100px;
+    height: auto;
     width: 100%;
     display: inline-block;
 }
@@ -298,6 +297,23 @@ a {
 
 .display {
     font-size: 30px;
+}
+.upper {
+    z-index: 1;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.divCenter {
+    display: inline-block;
+}
+#notifications {
+    text-align: center;
+}
+
+.blueBack {
+    background-color: #22cde8;
 }
 
 /* .board {
@@ -554,6 +570,16 @@ a {
         width: 100%;
         height: auto;
         float:right;
+    }
+}
+
+@media screen and (max-width:603px) {
+    .big {
+        font-size: 50px;
+    }
+
+    .newTitles h1 {
+        font-size: 20px;
     }
 }
 
