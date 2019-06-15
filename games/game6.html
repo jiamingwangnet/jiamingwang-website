@@ -4,14 +4,31 @@
 <head>
     <title>Snake</title>
     <link rel="stylesheet" href="css/games.css">
+    <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
-    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <script src="../js/detectMobile.js"></script>
 </head>
 
 <body style="background-color: lime;">
     <h1 id="score">score: 0</h1>
-    <canvas id="canvas" width="990" height="600"></canvas>
-    <button class="gameButton"><i class="fas fa-caret-up"></i></button>
+    <canvas id="canvas" width="990" height="500"></canvas>
+    <br>
+    <div class="center incanvas" id="buttons">
+        <button class="gameButton" onclick="gameHandler.up()"><i class="fas fa-caret-up "
+                onclick="gameHandler.up()"></i></button>
+        <br>
+        <button class="gameButton centerBlank" onclick="gameHandler.left()"><i class="fas fa-caret-left"
+                onclick="gameHandler.left()"></i></button>
+        <button class="gameButton" onclick="gameHandler.right()"><i class="fas fa-caret-right"
+                onclick="gameHandler.right()"></i></button>
+        <br>
+        <button class="gameButton" onclick="gameHandler.down()"><i class="fas fa-caret-down "
+                onclick="gameHandler.down()"></i></button>
+
+
+    </div>
+    <a href="../games.html">back</a>
     <script>
         let game = {
             ticknum: 0,
@@ -33,88 +50,85 @@
                 "#                               #",
                 "#       #                  #    #",
                 "#                               #",
-                "#                               #",
-                "#                               #",
-                "#                               #",
-                "#                               #",
                 "#################################"
             ],
             fruit: [
-                {x: 1, y: 1}
+                { x: 1, y: 1 }
             ],
             nope: [
-                {x: 1, y: 1}
+                { x: 1, y: 1 }
             ],
             score: 0,
+            
             tick: function () {
                 window.clearTimeout(game.timer)
                 game.ticknum++;
-                if(game.ticknum % 10) {
+                if (game.ticknum % 10) {
                     game.addRandFruit();
                     game.addRandNope();
                 }
                 let end = snake.move();
-                if(end == "no no no GAME OVER HAHAHAHAHAHAHAHAHAHHAHAHAHHAAHHAHAHHAHHAHAHAHAHHAHAHHAHAHAHA") {
+                if (end == "no no no GAME OVER HAHAHAHAHAHAHAHAHAHHAHAHAHHAAHHAHAHHAHHAHAHAHAHHAHAHHAHAHAHA") {
                     alert(end + "!! Your score: " + game.score);
                     return;
                 }
-    
+
                 document.getElementById("score").innerText = game.score;
                 blocksStuff.game();
                 game.timer = window.setTimeout("game.tick()", 200);
             },
-            isEmpty: function(loc) {
+            isEmpty: function (loc) {
                 return game.board[loc.y][loc.x] == ' ';
             },
-            isWall: function(loc) {
+            isWall: function (loc) {
                 return game.board[loc.y][loc.x] == '#';
-            }, 
-            isFruit: function(loc) {
-                for(let fruitnum = 0; fruitnum < game.fruit.length; fruitnum++) {
-                    let fruit =  game.fruit[fruitnum];
-                    if(loc.x == fruit.x && loc.y == fruit.y) {
+            },
+            isFruit: function (loc) {
+                for (let fruitnum = 0; fruitnum < game.fruit.length; fruitnum++) {
+                    let fruit = game.fruit[fruitnum];
+                    if (loc.x == fruit.x && loc.y == fruit.y) {
                         game.fruit.splice(fruitnum, 1);
                         return true;
                     }
                 }
                 return false;
             },
-            isNope: function(loc) {
-                for(let nopenum = 0; nopenum < game.nope.length; nopenum++) {
-                    let nope =  game.nope[nopenum];
-                    if(loc.x == nope.x && loc.y == nope.y) {
+            isNope: function (loc) {
+                for (let nopenum = 0; nopenum < game.nope.length; nopenum++) {
+                    let nope = game.nope[nopenum];
+                    if (loc.x == nope.x && loc.y == nope.y) {
                         game.nope.splice(nopenum, 1);
                         return true;
                     }
                 }
                 return false;
             },
-            isSnake: function(loc) {
-                for(let sPart = 0; sPart < snake.parts.length; sPart++) {
+            isSnake: function (loc) {
+                for (let sPart = 0; sPart < snake.parts.length; sPart++) {
                     let part = snake.parts[sPart];
-                    if(loc.x == part.x && loc.y == part.y) {
+                    if (loc.x == part.x && loc.y == part.y) {
                         return true;
                     }
                 }
                 return false;
             },
-            addRandFruit: function() {
+            addRandFruit: function () {
                 let randY = Math.floor(Math.random() * game.board.length) + 0;
                 let randX = Math.floor(Math.random() * game.board[randY].length) + 0;
-                let randLoc = {x: randX, y: randY};
-                if(game.isEmpty(randLoc) && !game.isFruit(randLoc)) {
+                let randLoc = { x: randX, y: randY };
+                if (game.isEmpty(randLoc) && !game.isFruit(randLoc)) {
                     game.fruit.push(randLoc);
                 }
-            }, 
-            addRandNope: function() {
+            },
+            addRandNope: function () {
                 let randY = Math.floor(Math.random() * game.board.length) + 0;
                 let randX = Math.floor(Math.random() * game.board[randY].length) + 0;
-                let randLoc = {x: randX, y: randY};
-                if(game.isEmpty(randLoc) && !game.isNope(randLoc)) {
+                let randLoc = { x: randX, y: randY };
+                if (game.isEmpty(randLoc) && !game.isNope(randLoc)) {
                     game.nope.push(randLoc);
                 }
-            }, 
-            pause: function() {
+            },
+            pause: function () {
                 alert("paused");
                 return;
             }
@@ -188,27 +202,27 @@
             },
             move: function () {
                 let place = snake.nextPlace();
-                if(game.isWall(place) || game.isSnake(place)) {
+                if (game.isWall(place) || game.isSnake(place)) {
                     return "no no no GAME OVER HAHAHAHAHAHAHAHAHAHHAHAHAHHAAHHAHAHHAHHAHAHAHAHHAHAHHAHAHAHA";
                 }
 
-                if(game.isEmpty(place)) {
+                if (game.isEmpty(place)) {
                     snake.parts.unshift(place);
                     snake.parts.pop();
                 }
-                
-                if(game.isFruit(place)){
+
+                if (game.isFruit(place)) {
                     snake.parts.unshift(place);
                     game.score++;
                 }
-                if(game.isNope(place)){
+                if (game.isNope(place)) {
                     let randN = Math.floor(Math.random() * 2) + 1;
-                    if(randN == 1) {
+                    if (randN == 1) {
                         snake.parts.pop(place);
                         game.score--;
                     }
 
-                    if(randN == 2) {
+                    if (randN == 2) {
                         snake.parts.unshift(place);
                         snake.parts.unshift(place);
                         snake.parts.unshift(place);
@@ -235,6 +249,26 @@
                 snake.facing = direction;
                 game.tick();
             },
+            up: function () {
+                if (snake.facing != "S") { direction = "N"; }
+                snake.facing = direction;
+                game.tick();
+            },
+            left: function () {
+                if (snake.facing != "E") { direction = "W"; }
+                snake.facing = direction;
+                game.tick();
+            },
+            down: function () {
+                if (snake.facing != "N") { direction = "S"; }
+                snake.facing = direction;
+                game.tick();
+            },
+            right: function () {
+                if (snake.facing != "W") { direction = "E"; }
+                snake.facing = direction;
+                game.tick();
+            },
             startGame: function () {
                 window.addEventListener("keypress", gameHandler.keyInput, false);
                 game.tick();
@@ -242,7 +276,9 @@
         };
 
 
-
+        if(detectMobile() == false) {
+            document.getElementById("buttons").style.display = "none";
+        }
         gameHandler.startGame();
     </script>
 </body>

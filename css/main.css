@@ -242,7 +242,9 @@ a {
     width: 40%;
     display: inline-block;
 }
-
+.opacity0 {
+    opacity: 0;
+}
 .choosePicInput {
     font-size: 10px;
 }
