@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>alien</title>
+</head>
+
+<body>
+    <canvas id="canvas" height="700" width="1500">
+
+    </canvas>
+    <script>
+        let ctx = document.getElementById("canvas").getContext("2d");
+        let game = {
+            height: 700,
+            width: 1500,
+            tick: 0,
+            draw: function () {
+                ctx.fillStyle = "black";
+                ctx.fillRect(0, 0, this.width, this.height);
+            }
+        }
+        let player = {
+            x: 750,
+            y: 500,
+            width: 30,
+            height: 30,
+            color: "blue",
+            facing: "N",
+            lasers: [],
+            drawLaser: function (index) {
+                this.lasers.unshift(new laser(10, 20));
+                ctx.fillStyle = this.lasers[index].color;
+                ctx.fillRect(this.lasers[index].x, this.lasers[index].y, this.lasers[index].width, this.lasers[index].height);
+            },
+            move: function (key) {
+                if (key == 87) {
+                    this.y -= 4;
+                } else if (key == 65) {
+                    this.x -= 4;
+                } else if (key == 83) {
+                    this.y += 4;
+                } else if (key == 68) {
+                    this.x += 4;
+                }
+            },
+            draw: function () {
+                ctx.fillStyle = this.color;
+                ctx.fillRect(this.x, this.y, this.width, this.height);
+            }
+        }
+        class laser {
+            constructor(width, height) {
+                this.color = "cyan";
+                this.x = this.getPlayerX();
+                this.y = this.getPlayerY();
+                this.width = width;
+                this.height = height;
+            }
+            getPlayerX() {
+                const x = player.x;
+                return x;
+            }
+            getPlayerY() {
+                const y = player.y;
+                return y;
+            }
+        }
+        function update() {
+            for (let keyCode in held) {
+                player.move(keyCode);
+                if (keyCode == 32) {
+                    for (index in player.lasers) {
+                        player.drawLaser(index)
+                    }
+                }
+            }
+        }
+
+        function tick() {
+            game.draw();
+            player.draw();
+            for(index in player.lasers) {
+                player.drawLaser(index)
+            }
+            update();
+            game.tick++;
+            window.setTimeout("tick()", 1000 / Infinity);
+        }
+        let held = {}
+        window.addEventListener("keydown", function (info) {
+            held[event.keyCode] = true;
+        }, false);
+
+        window.addEventListener("keyup", function (info) {
+            delete held[event.keyCode];
+        }, false)
+        tick()
+    </script>
+</body>
+
+</html>

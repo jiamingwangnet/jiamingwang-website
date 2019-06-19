@@ -12,6 +12,9 @@
 
 <body>
     <canvas id="canvas" height="760" width="1500"></canvas>
+    <audio id="s">
+        <source src="audio/background.mp3" type="audio/mp3">
+    </audio>
     <script>
 
 
@@ -107,22 +110,27 @@
             width: 1500,
             height: 760,
             objRowCount: 1300,
+            objColumnCount: 0,
             stars: [
                 new stars()
             ],
             obj: [],
-            addRows: function (count) {
-                for (let n = 0; n < count; n++) {
+            playBackgroundMusic: function () {
+                document.getElementById("s").play();
+            },
+            addRows: function (countRow, number) {
+                for (let n = 0; n < countRow; n++) {
                     this.obj.push(
-                        new testObject(this.objRowCount, 0),
-                        new testObject(this.objRowCount, 120),
-                        new testObject(this.objRowCount, 240),
-                        new testObject(this.objRowCount, 360),
-                        new testObject(this.objRowCount, 480),
-                        new testObject(this.objRowCount, 600),
-                        new testObject(this.objRowCount, 700)
+                        new testObject(this.objRowCount, this.objColumnCount)
                     );
                     this.objRowCount += 120;
+
+                }
+                for (let i = 0; i < number; i++) {
+                    this.obj.push(
+                        new testObject(this.objRowCount, this.objColumnCount)
+                    );
+                    this.objColumnCount += 120;
                 }
             },
             draw: function () {
@@ -146,10 +154,10 @@
                 }
                 return true;
             },
-            newPlace: function() {
+            newPlace: function () {
 
             },
-            placeSettings: function(settings) {
+            placeSettings: function (settings) {
 
             }
         }
@@ -206,7 +214,7 @@
             for (let i = 0; i < 5000; i++) {
                 game.stars.push(new stars())
             }
-            game.addRows(1);
+            game.addRows(3, 2);
         }
         createMore();
         function update() {
@@ -250,6 +258,7 @@
             if (game.isAllDead()) {
                 console.log("dead");
             }
+            game.playBackgroundMusic();
             update()
             game.ticks += 1;
             window.setTimeout("tick()", 1000 / Infinity);
@@ -263,6 +272,7 @@
         window.addEventListener("keyup", function (info) {
             delete held[event.keyCode];
         }, false)
+
         tick();
     </script>
 </body>

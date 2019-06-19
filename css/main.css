@@ -382,8 +382,12 @@ a {
     display: none;
     font-size: 30px;
     color: blue;
+    background-color:#0b8294b0; 
+    border: none;
 }
-
+.down:active {
+    background-color:#0ac4e0b0; 
+}
 .model2 {
     position: fixed;
     z-index: 1;

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <canvas id="canvas" height="760" width="1500"></canvas>
+    <script>
+        let canvas = document.getElementById("canvas");
+        let ctx = canvas.getContext("2d");
+        //-----------objects------------------------------------
+        class grass {
+            constructor(width, height) {
+                this.x = Math.floor(Math.random() * game.width - 150);
+                this.y = Math.floor(Math.random() * game.height) - 150;
+                this.width = width;
+                this.height = height;
+            }
+        }
+
+        class tree {
+            constructor(width) {
+                this.x = Math.floor(Math.random() * game.width - 150);
+                this.y = Math.floor(Math.random() * game.height - 150);
+                this.width = width;
+                this.height = Math.floor(Math.random() * (game.height - 620 + 100));
+                this.topWall = this.y
+                this.bottomWall = (this.y + this.height)
+                this.leftWall = this.x
+                this.rightWall = (this.x + this.width)
+            }
+        }
+
+        class house {
+            constructor() {
+                this.x = Math.floor(Math.random() * game.width - 150);
+                this.y = Math.floor(Math.random() * game.height - 150);
+                this.width = 150;
+                this.height = 75;
+            }
+        }
+        //---------------creatures-----------------------------------
+        class person {
+            constructor() {
+                this.x = Math.floor(Math.random() * game.width - 150);
+                this.y = Math.floor(Math.random() * game.height - 150);
+                this.width = 30;
+                this.height = 30;
+            }
+            move(direction) {
+                if (direction == "f") {
+                    this.x += 2;
+                    this.x += 2;
+                    this.x += 2;
+                }
+                if (direction == "b") {
+                    this.x -= 2;
+                    this.x -= 2;
+                    this.x -= 2;
+                }
+            }
+        }
+        //game stuff----------------------------------------------
+        let game = {
+            height: 660,
+            width: 1500,
+            gravity: 10,
+            tick: function () {
+                this.draw();
+            },
+            draw: function () {
+                ctx.fillStyle = "lime"
+                ctx.fillRect(0, 0, this.width, this.height)
+            }
+        };
+        let objects = {
+            obj: [
+                new grass(20, 10)
+            ],
+            obj2: [
+                new tree(51)
+            ],
+            obj3: [
+                new house()
+            ],
+            draw: function () {
+                for (index in this.obj) {
+                    let obj = this.obj[index];
+                    let x = obj.x;
+                    let y = obj.y;
+                    ctx.fillStyle = "green";
+                    ctx.fillRect(x, y, obj.width, obj.height);
+                }
+
+                for (index in this.obj3) {
+                    let obj = this.obj3[index];
+                    let x = obj.x;
+                    let y = obj.y;
+                    ctx.fillStyle = "#ffcc66";
+                    ctx.fillRect(x, y, obj.width, obj.height);
+                }
+
+                for (index in this.obj2) {
+                    let obj = this.obj2[index];
+                    let x = obj.x;
+                    let y = obj.y;
+                    ctx.fillStyle = "brown";
+                    ctx.fillRect(x, y, obj.width, obj.height);
+                }
+            },
+
+            tick: function () {
+                for (let i = 0; i < 20; i++) {
+                    this.draw();
+                }
+            }
+        }
+        let player = {
+            width: 50,
+            height: 50,
+            y: 0,
+            x: 0,
+            getTopWall: function () {
+                return this.y;
+            },
+            getBottomWall: function () {
+                return (this.y + this.height);
+            },
+            getLeftWall: function () {
+                return this.x;
+            },
+            getRightWall: function () {
+                return (this.x + this.width);
+            },
+            draw: function () {
+                ctx.fillStyle = "blue"
+                ctx.fillRect(this.x, this.y, this.width, this.height)
+            },
+            collide: function () {
+                for (index in objects.obj2) {
+                    let obj2 = objects.obj2[index];
+                    if (obj2.x > this.getLeftWall()
+                        || obj2.x < this.getRightWall()
+                        || obj2.y > this.getTopWall()
+                        || obj2.y < this.getBottomWall()) {
+                        return true;
+                    }
+                    return false;
+                }
+            },
+            move: function (key) {
+                let run = false;
+                if (key == 87) {
+                    if (run == false) {
+                        this.y -= 2
+                    } else {
+                        this.y -= 5;
+                    }
+                } else if (key == 68) {
+                    if (run == false) {
+                        this.x += 2
+                    } else {
+                        this.x += 5;
+                    }
+                }
+                else if (key == 65) {
+                    if (run == false) {
+                        this.x -= 2
+                    } else {
+                        this.x -= 5;
+                    }
+                } else if (key == 83) {
+                    if (run == false) {
+                        this.y += 2
+                    } else {
+                        this.y += 5;
+                    }
+                } else if (key == 16) {
+                    if (run == false) {
+                        run = true;
+                    }
+                }
+            },
+            tick: function () {
+                this.draw();
+                this.collide();
+            }
+        }
+
+
+        const bar = {
+            width: 1500,
+            height: 100,
+            draw: function () {
+                ctx.fillStyle = "grey";
+                ctx.fillRect(0, 660, this.width, this.height)
+            },
+            tick: function () {
+                this.draw();
+            }
+        }
+        let creatures = {
+            thing: [
+                new person()
+            ],
+            draw: function () {
+                for (index in this.thing) {
+                    let thing = this.thing[index];
+                    let x = thing.x;
+                    let y = thing.y;
+                    ctx.fillStyle = "red";
+                    ctx.fillRect(x, y, thing.width, thing.height);
+                }
+            },
+            tick: function () {
+                this.draw();
+            }
+        }
+        function createMore() {
+            for (let i = 0; i < 100; i++) {
+                objects.obj.push(new grass(20, 10))
+                objects.obj2.push(new tree(51))
+            }
+            for (let i = 0; i < 10; i++) {
+                objects.obj3.push(new house())
+            }
+            for (let i = 0; i < 10; i++) {
+                creatures.thing.push(new person())
+            }
+        }
+        createMore();
+        function update() {
+            for (let keyCode in held) {
+                player.move(keyCode);
+                player.collide();
+            }
+            for (index in creatures.thing) {
+                creatures.thing[index].move("f");
+            }
+            if (player.collide()) {
+                console.log("collided");
+            }
+
+        }
+
+        function tick() {
+            game.tick();
+            player.tick();
+            creatures.tick();
+            objects.tick();
+            bar.tick()
+            update();
+            window.setTimeout("tick()", 1000 / Infinity);
+        }
+        let held = {}
+        window.addEventListener("keydown", function (info) {
+            held[event.keyCode] = true;
+        }, false);
+
+        window.addEventListener("keyup", function (info) {
+            delete held[event.keyCode];
+        }, false)
+
+        tick();
+    </script>
+</body>
+
+</html>

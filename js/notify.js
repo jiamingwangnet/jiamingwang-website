@@ -3,7 +3,7 @@ class notify {
         this.notify = document.createElement("div");
         this.notify.innerHTML = '<div class="toast" data-autohide="false">'+
         '<div class="toast-header">'+
-          '<img src="../jiamingwang-website/images/notify.png" class="rounded mr-2" alt="...">'+
+          '<img src="../images/notify.png" class="rounded mr-2" alt="...">'+
           '<strong class="mr-auto">' + title + '</strong>'+
           '<button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">'+
             '<span aria-hidden="true">&times;</span>'+
