@@ -94,8 +94,9 @@ function resetGame() {
 
 function showMoney() {
 	document.getElementById("hello").innerHTML = "your money: $ " + buy;
-	setTimeout(showMonney(), 1)
+	setTimeout(showMoney(), 1)
 }
+showMoney() 
 
 
 
