@@ -3,12 +3,27 @@
 
 <head>
     <title>PONG</title>
+    <link rel="stylesheet" href="css/games.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <script src="../js/detectMobile.js"></script>
 </head>
 
 <body>
     <canvas id="canvas" width="640" height="480"></canvas>
     <h2 id="you">You: 0</h2>
     <h2 id="ai">AI: 0</h2>
+    <br>
+    <div class="incanvas" id="buttons">
+        <button class="gameButton" ontouchstart="player.up()"><i class="fas fa-caret-up "
+            ontouchstart="player.up()"></i></button>
+        <button class="gameButton" ontouchstart="player.down()"><i class="fas fa-caret-down "
+            ontouchstart="player.down()"></i></button>
+
+
+    </div>
+    <a href="../games.html">back</a>
     <script>
         let canvas = document.getElementById("canvas");
         let ctx = canvas.getContext("2d");
@@ -45,6 +60,22 @@
                 } else {
                     this.speedMod = 0;
                 }
+                nextY = nextY < 0 ? 0 : nextY;
+                nextY = nextY + this.height > 480 ? 480 - this.height : nextY;
+                this.y = nextY;
+            }
+            this.up = function() {
+                let nextY = this.y;
+                nextY += -5;
+                this.speedMod = 1.5;
+                nextY = nextY < 0 ? 0 : nextY;
+                nextY = nextY + this.height > 480 ? 480 - this.height : nextY;
+                this.y = nextY;
+            }
+            this.down = function() {
+                let nextY = this.y;
+                nextY += 5;
+                this.speedMod = 1.5;
                 nextY = nextY < 0 ? 0 : nextY;
                 nextY = nextY + this.height > 480 ? 480 - this.height : nextY;
                 this.y = nextY;
@@ -163,6 +194,9 @@
                     return;
             }
         }, false)
+        if(detectMobile() == false) {
+            document.getElementById("buttons").style.display = "none";
+        }
         tick()
 
     </script>

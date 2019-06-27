@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Its Over</title>
+    <title>Space Fight</title>
 </head>
 <style>
     body {
@@ -21,15 +21,16 @@
         //ctx
         let ctx = document.getElementById("canvas").getContext("2d");
         //classes
-        class stars {
+
+        class Stars {
             constructor() {
-                this.x = Math.floor(Math.random() * 1600);
-                this.y = Math.floor(Math.random() * 760);
+                this.x = Math.floor(Math.random() * 1600);;
+                this.y = Math.floor(Math.random() * 760);;
                 this.width = 1;
                 this.height = 1;
             }
         }
-        class testObject {
+        class TestObject {
             constructor(x, y) {
                 this.isDead = false;
                 this.x = x;
@@ -38,7 +39,7 @@
                 this.height = 60;
                 this.img = new Image();
                 this.goingX = "forwards";
-                this.goingY = "up";
+                this.goingY = "down";
             }
             spawn() {
                 this.img.src = "img/robotBad.png"
@@ -88,31 +89,78 @@
             }
             moveY(execute) {
                 if (execute) {
-                    if (this.goingY != "down") {
-                        this.y -= 5;
-                        if (this.y == 0) {
-                            this.goingY = "down";
-                        }
-                    } else if (this.goingY == "down") {
+                    if (this.goingY != "up") {
                         this.y += 5;
                         if (this.y == (760 - this.height)) {
                             this.goingY = "up";
+                        }
+                    } else if (this.goingY == "up") {
+                        this.y -= 5;
+                        if (this.y == 0) {
+                            this.goingY = "down";
                         }
                     }
                 }
             }
         }
 
+        class Place {
+            constructor(stars, starsNumber, bgcolor, obj, objX, objY) {
+                this.stars = stars;
+                this.starsNumber = starsNumber;
+                this.bgcolor = bgcolor;
+                this.obj = obj;
+                this.objX = objX;
+                this.objY = objY;
+                this.created = false;
+                this.cleared = false;
+            }
+            create() {
+                if (this.cleared == false) {
+                    ctx.clearRect(0, 0, 1500, 760);
+                    this.cleared = true;
+                }
+                game.draw(this.bgcolor);
+                game.drawStars();
+                if (this.created == false) {
+                    if (this.stars) {
+                        for (let i = 0; i < this.starsNumber; i++) {
+                            game.stars.push(new Stars())
+                        }
+                    }
+                    if (this.obj) {
+                        game.addRows(this.objY, this.objX);
+                    }
+                    this.created = true;
+                }
+            }
+        }
         //game/characters
-
         let game = {
             ticks: 0,
             width: 1500,
             height: 760,
-            objRowCount: 1300,
-            objColumnCount: 0,
+            objRowCount: 0,
+            objColumnCount: 1300,
             stars: [
-                new stars()
+            ],
+            places: [
+                // new Place(
+                //     true,
+                //     5000,
+                //     "black",
+                //     true,
+                //     1,
+                //     1
+                // ),
+                // new Place(
+                //     false,
+                //     0,
+                //     "blue",
+                //     false,
+                //     0,
+                //     0
+                // )
             ],
             obj: [],
             playBackgroundMusic: function () {
@@ -120,21 +168,19 @@
             },
             addRows: function (countRow, number) {
                 for (let n = 0; n < countRow; n++) {
-                    this.obj.push(
-                        new testObject(this.objRowCount, this.objColumnCount)
-                    );
+                    this.objColumnCount = 1300;
+                    for (let i = 0; i < number; i++) {
+                        this.obj.push(
+                            new TestObject(this.objColumnCount, this.objRowCount)
+                        );
+                        this.objColumnCount -= 120;
+                    }
                     this.objRowCount += 120;
 
                 }
-                for (let i = 0; i < number; i++) {
-                    this.obj.push(
-                        new testObject(this.objRowCount, this.objColumnCount)
-                    );
-                    this.objColumnCount += 120;
-                }
             },
-            draw: function () {
-                ctx.fillStyle = "black";
+            draw: function (color) {
+                ctx.fillStyle = color;
                 ctx.fillRect(0, 0, this.width, this.height);
             },
             drawStars: function () {
@@ -148,18 +194,21 @@
             },
             isAllDead: function () {
                 for (index in this.obj) {
-                    if (this.obj[index - 1] != undefined) {
+                    if (this.obj[index] != undefined) {
                         return false;
                     }
                 }
                 return true;
             },
-            newPlace: function () {
-
+            makePlace: function (add) {
+                ctx.clearRect(0,0,this.width, this.height)
+                this.places.pop();
+                this.places.push(add);
             },
-            placeSettings: function (settings) {
-
-            }
+            createPlace: function () {
+                ctx.clearRect(0,0,this.width, this.height)
+                game.places[0].create();
+            },
         }
 
 
@@ -210,13 +259,6 @@
         }
 
         //world generate functions
-        function createMore() {
-            for (let i = 0; i < 5000; i++) {
-                game.stars.push(new stars())
-            }
-            game.addRows(3, 2);
-        }
-        createMore();
         function update() {
             for (let keyCode in held) {
                 player.move(keyCode);
@@ -240,9 +282,16 @@
 
             }
         }
+        game.makePlace(new Place(
+                true,
+                5000,
+                "black",
+                true,
+                8,
+                2
+            ));
         function tick() {
-            game.draw();
-            game.drawStars();
+            game.createPlace();
             if (player.isDead != true) {
                 player.spawn();
                 player.swords.unshift(new sword())
@@ -256,20 +305,28 @@
                 }
             }
             if (game.isAllDead()) {
-                console.log("dead");
+                game.makePlace(new Place(
+                    false,
+                    0,
+                    "blue",
+                    false,
+                    0,
+                    0
+                ))
+                game.createPlace();
             }
             game.playBackgroundMusic();
             update()
             game.ticks += 1;
-            window.setTimeout("tick()", 1000 / Infinity);
+            window.setTimeout("tick()", 1000 / 80);
         }
         //keypress detection
         let held = {}
-        window.addEventListener("keydown", function (info) {
+        window.addEventListener("keydown", (info) => {
             held[event.keyCode] = true;
         }, false);
 
-        window.addEventListener("keyup", function (info) {
+        window.addEventListener("keyup", (info) => {
             delete held[event.keyCode];
         }, false)
 

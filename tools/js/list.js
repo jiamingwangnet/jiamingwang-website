@@ -1,14 +1,19 @@
+let dot = 1;
+localStorage.setItem(dot, "dot");
+let dot2 = localStorage.getItem("dot");
 function addItem() {
     let newItem = document.createElement("li");
     newItem.innerHTML = document.getElementById("box").value;
+    newItem.id = "dot" + dot2;
+    dot++;
+    localStorage.setItem(dot, "dot");
     newItem.onclick = removeItem;
     document.getElementById("list").appendChild(newItem);
     saveList();
 }
 function removeItem() {
-    $(this).slideToggle();
     document.getElementById("list").removeChild(this);
-    $(this).slideToggle();
+    // $("."+this.id).slideToggle();
     saveList();
 }
 function saveList() {

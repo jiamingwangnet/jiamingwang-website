@@ -76,7 +76,7 @@ class Block {
 		this.element.style.height = (this.height - this.borderSize * 2) + "px";
 		this.element.style.border = this.borderSize + "px solid white";
 		this.element.style.backgroundColor = "green";
-		this.element.style.fontSize = "30px";
+		// this.element.style.fontSize = "30px";
 
 		var that = this;
 
@@ -124,7 +124,7 @@ class Block {
 
 	onClosed() {
 		var that = this;
-		setTimeout(function () {
+		setTimeout( () => {
 			that.opened = false;
 			that.element.style.backgroundColor = "green";
 			that.element.style.backgroundImage = "none";
