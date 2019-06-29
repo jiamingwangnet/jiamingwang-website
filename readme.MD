@@ -13,6 +13,7 @@ There will be updates
 * In site notifications
 * finished News page
 * games in working
+* updated old games with my latest brain
 :smiley:
 ----
 website: 

@@ -1,75 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-	<title>jewelry maker</title>
-	<link rel="stylesheet" type="text/css" href="../css/main.css" />
-	<style>
-		body {
-			background-color: cyan;
-		}
-	</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/games.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <script src="../js/detectMobile.js"></script>
+    <title>jewelry maker</title>
+    <style>
+        body {
+            background-color: rgb(177, 135, 0);
+        }
+        #jewelry {
+            display: inline-block;
+        }
+
+        #points {
+            float: right;
+        }
+        .right {
+            float: right;
+        }
+    </style>
 </head>
 
 <body>
-	<script src="js/game2.js"></script>
-	<br />
-	<button onclick="resetGame()">reset</button>
-	<br />
-	<br />
-	<h3 id="hello">your money: $ 0</h3>
-	<div style="text-align: right">
-		<h3 id="boo">points: 0</h3>
-	</div>
-	<button onclick="addBuy()"> get money</button>
+    <h2 id="money">Money: $0</h2>
+    <button class="gameButtonBoth" onclick="addMoney();">Add Money</button>
+    <h2 id="points">Points: 0</h2>
+    <button class="gameButtonBoth right" onclick="points2Money();">Exchange points to money</button>
+    <script src="js/game2.js"></script>
+    <br>
+    <br><br>
+    <div class="center">
+            <h1 style="color:darkturquoise;">Diamonds</h1>
+            <button class="gameButtonBoth" onclick="buyDiamond();">Buy diamond - $99900</button>
+            <h2 id="diamonds">Diamonds: 0</h2>
 
-	<br />
-	<br />
-	<div style="text-align: center;">
-		<h3>diamond<h3>
-				<button onclick="buyStuffx()" style=" height: 100px;">$99900 to buy diamond</button>
-				<div style="color: blue;">
-					<h2 id="hid"></h2>
-				</div>
-				<br />
-				<h3>gold<h3>
-						<button onclick="buyStuffy()" style=" height: 100px;">$10000 to buy gold</button>
-						<div style="color: gold;">
-							<h2 id="his"></h2>
-						</div>
-						<br />
-						<h3>tools<h3>
-								<button onclick="buyStuffm()" style=" height: 100px;">$998 to buy tool</button>
-								<div style="color: gray;">
-									<h2 id="hia"></h2>
-								</div>
-	</div>
-	<button onclick="makeJewelry()">make jewelry</button>
-	<button onclick="sendJewelry()" style=" height: 100px;">$2000 to send the jewelry</button>
-	<div style="text-align: center;">
-		<h2>
-			<div id="hq" style="color: blue;"></div>
-			<div id="hw" style="color: gold;"></div>
-			<div id="he" style="color: blue;"></div>
-			<div id="hr" style="color: gold;"></div>
-			<div id="ht" style="color: blue;"></div>
-			<div id="hy" style="color: gold;"></div>
-			<div id="hu" style="color: blue;"></div>
-		</h2>
-	</div>
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	<p>how to play<br />press on get money, then get as much money as you want.<br />you need a tool, a diamond and gold,
-		each of them is for different
-		amount of money (it says how much they cost on the button).<br />press on make jewelry then on send jewelry, send
-		jewelry cost $2000.<br />once you have sent one jewelry you will get a point.<br />
-		keep on doing this until you get bored.<br />if you want to restart then click on the reset button. HAVE FUN!</p>
-	<a href="../games.html">back</a>
+            <h1 style="color:goldenrod;">Gold</h1>
+            <button class="gameButtonBoth" onclick="buyGold();">Buy gold - $10000</button>
+            <h2 id="gold">Gold: 0</h2>
+
+            <h1 style="color:gray;">Tools</h1>
+            <button class="gameButtonBoth" onclick="buyTools();">Buy tools - $998</button>
+            <h2 id="tools">Tools: 0</h2>
+            <h2 id="toolHealth">HP: 0</h2>
+    </div>
+    <button class="gameButtonBoth" onclick="makeJewelry();">Make jewelry</button>
+    <button class="gameButtonBoth" onclick="sellJewelry()">Send Jewelry $2000</button>
+    <div class="center">
+            <div id="jewelry">
+                
+            </div>
+    </div>
+    <br>
+    <br>
+    <a href="../games.html">back</a>
 </body>
 
 </html>

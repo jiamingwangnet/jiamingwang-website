@@ -2,56 +2,57 @@
 <html>
 
 <head>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link href="https://fonts.googleapis.com/css?family=Orbitron:400,900" rel="stylesheet">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
 		integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-	<link href="NES.css-master/css/nes.css" rel="stylesheet" />
-	<link rel="stylesheet" href="css/home.css" />
-	<meta charset="UTF-8">
-	<title>chat</title>
-	<!-- <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/4.13.0/firebase-firestore.js"></script> -->
-	<link rel="icon" href="img/logo.ico">
-	<!-- <script src="js/name.js"></script>
-	<script src="js/database.js"></script>
-	<script src="js/password.js"></script>
-	<script src="js/navBar.js"></script> -->
-	<!-- <style>
-		.chat {
-			border: 10px solid lightseagreen;
-			border-radius: 10%;
-			background-color: darkcyan;
-		}
-	</style> -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+	<link href="css/lib/NES.css-master/css/nes.css" rel="stylesheet" />
+	<script src="js/model.js"></script>
+	<script src="js/pic.js"></script>
+	<script src="js/time.js"></script>
+	<script src="js/names.js"></script>
+	<link rel="stylesheet" href="css/main.css">
+	<title>Chat</title>
+	<link rel="shortcut icon" href="images/icon.ico" type="image/x-icon">
 </head>
 
-<body>
-	<b>
-		<div style="margin: 29px; display: inline-block;">
-			<b>
-				<div style="overflow: visible; display: inline-block;">
-					<ul class="nav">
-						<!--<li><a href="boo.html">about me</a></li>
-								<li><a href="us.html">About Us</a></li>-->
-						<li><u>
-								<h2><i class="fas fa-home" style="color:#003d66; font-size: 24px;"></i><a
-										href="index.html">HOME</a></h2>
-							</u></li>
-						<li><a href="tehNews.html">news</a></li>
-						<li><a href="games.html">games</a></li>
-						<li> <a href="random.html">random things</a></li>
-						<li><a href="comments.html" style="border: 5px dashed darkcyan">chat</a></li>
-						<li><a href="videos.html">videos</a></li>
-						<li><a href="tools.html">tools</a></li>
-						<li>
-							<div class="spin"><a class="hamish" href="hamish.html">HAMISH</a></div>
-						</li>
-						<!--<li><a href="team_bobler_only.html">Team Bobler only</a></li>
-														<li><a href="log_in.html">TB login</a></li>-->
-					</ul>
-				</div>
-			</b>
-			<!-- <div style="text-align: center;">
+<body onload="getPic(); getName(); time();">
+	<div class="nav">
+
+		<script src="js/nav.js"></script>
+	</div>
+	<div class="model">
+		<button class="exit" onclick="hideModel()">X</button>
+		<img src="images/defaut.bmp" alt="your image" class="modelImage">
+		<!-- <div class="divButton">
+                 <input type='file' onchange="readURL(this);" class="choosePicInput" value="choose image" />
+                
+            </div> -->
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+			</div>
+			<div class="custom-file">
+				<input type="file" class="custom-file-input" id="inputGroupFile03" onchange="readURL(this);"
+					aria-describedby="inputGroupFileAddon03">
+				<label class="custom-file-label" for="inputGroupFile03">Find Image</label>
+			</div>
+		</div>
+
+		<h2 class="name">name</h2>
+		<button onclick="names()" class="button">change name</button>
+	</div>
+	<!-- <div style="text-align: center;">
 				<i class="far fa-comment-dots" style="font-size:90px;color:blue;"></i>
 				<div>
 					<div style="text-align: center">
@@ -88,30 +89,20 @@
 					var chatPasswords = readPassword();
 					document.getElementById("adminPassword").innerHTML = "delete password:" + chatPasswords[0];
 				</script> -->
-				<div>SORRY!! PAGE CLOSED DUE TO SOME PROBLEMS</div>
-				<div
-					style="text-align: center; border-top: 20px solid rgba(0, 0, 255, 0.705); color: black; background-color: darkblue; font-family: Verdana, Geneva, Tahoma, sans-serif;">
-					<b>
-						<h3 id="myVisits"></h3>
-						<h3>#TEAMBOBLER<br />Team Bobler!<br /><br />website made by Jiaming. Ideas given by Leroy,
-							Savion and
-							Tanya.
-							<br /><br /><br />TB<br />Team
-							Bobler</br><br />this website is safe</h3>
-						last Modified: <span id="modified"></span>
-						<script>
-							document.getElementById("modified").innerHTML = document.lastModified;
-						</script>
-						<br>
-						<div style="background-color: #00c3ffe1;"> || <a href="us.html">about us</a> || <a
-								href="boo.html">about the
-								creator</a>||<a href="team_bobler_only.html">non of ya business</a> || <a
-								href="log_in.html">also non of ya
-								business</a> || </div>
-						<!-- <a href="#" style="background-color: cyan">download</a> -->
-					</b></div>
-					<img src="../2019-05-26 17_39_01-Snake.png" alt="iuhgbjihb">
-	</b>
+	<div class="center">
+		<div class="error">
+			SORRY!! THIS PAGE IS UNDER CONSTRUCTION
+			<br>
+			<img src="images/in-working.png" alt="Under construction" class="image2">
+		</div>
+	</div>
+	<br>
+	<div class="footer">
+		<b>
+			<h3 id="myVisits"></h3>
+
+			<h5>version 2.0.0 pre 14</h5>
+		</b>
 	</div>
 
 </body>
