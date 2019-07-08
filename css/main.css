@@ -23,6 +23,20 @@ a {
     text-decoration: none;
     font-family: 'Orbitron', sans-serif;
 }
+
+table {
+    border-collapse: collapse;
+    background-color: #07b9fff5;
+}
+th {
+    font-size: 30px;
+}
+th, td {
+    border: 5px solid blue;
+    text-align: left;
+    padding: 8px;
+}
+tr:nth-child(even){background-color: #0093cef5}
 p,
 div,
 h1,
@@ -43,7 +57,10 @@ span {
     display: inline-block;
 }
 .small {
-    font-size: 30px;
+    font-size: 10px;
+}
+.xsmall {
+    font-size: 5px;
 }
 body {
     background-color: #22cde8;
@@ -130,7 +147,7 @@ body {
     background-position: center; 
     margin-bottom: 25px;
     margin-top: 25px;
-    height: auto;
+    height: 500px;
 }
 .profile {
     background-color: blue;

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron:400,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link href="../css/lib/NES.css-master/css/nes.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../games/css/games.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../js/random.js"></script>
+    <title>News7</title>
+</head>
+
+<body>
+    <h1 class="blue">HELLO EVERYONE</h1>
+    <p>New website.</p>
+    <p>Yes Yes, I am getting a Raspberry Pi for some reason. <br>
+    But whatever, I really like Raspberry Pi.<br>I changed my website, closed the chat, made new games, and it's the school holiday!!! <br>
+    </p>
+    <p>Here's the links to the new games:</p>
+    <a href="../games/game6.html">Click me!</a>
+    <br>
+    <a href="../games/game7.html">Click me!</a>
+    <br>
+    <a href="../games/game8.html">Click me!</a>
+    <p>Or just I'll give you a random one...</p>
+    <script>
+        function random() {
+            let random = new Random(["../games/game6.html","../games/game7.html","../games/game8.html"]);
+            window.location.href = random.random();
+        }
+    </script>
+    <button class="gameButtonBoth" onclick="random()">RANDOM</button>
+    <h1>LET'S GET BACK TO THE TOPIC - NO TOPIC</h1>
+    <p>I am only updating stuff going on in the school holiday. <br>
+        I also put my old website back, the very original one, <a href="../2017/12-18/index.html">click here</a>.
+        Now you can go.
+    </p>
+    <a href="../tehNews.html">back</a>
+</body>
+
+</html>

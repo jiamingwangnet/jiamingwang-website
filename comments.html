@@ -20,21 +20,21 @@
 	<link href="css/lib/NES.css-master/css/nes.css" rel="stylesheet" />
 	<script src="js/model.js"></script>
 	<script src="js/pic.js"></script>
-	<script src="js/time.js"></script>
+	<script src="js/profile.js"></script>
 	<script src="js/names.js"></script>
 	<link rel="stylesheet" href="css/main.css">
 	<title>Chat</title>
 	<link rel="shortcut icon" href="images/icon.ico" type="image/x-icon">
 </head>
 
-<body onload="getPic(); getName(); time();">
+<body onload="getProfileInfo('both'); time();; time();">
 	<div class="nav">
 
 		<script src="js/nav.js"></script>
 	</div>
 	<div class="model">
 		<button class="exit" onclick="hideModel()">X</button>
-		<img src="images/defaut.bmp" alt="your image" class="modelImage">
+		<img src="images/defaut.bmp" alt="your image" class="modelImage" id="modelImage">
 		<!-- <div class="divButton">
                  <input type='file' onchange="readURL(this);" class="choosePicInput" value="choose image" />
                 
@@ -94,6 +94,8 @@
 			SORRY!! THIS PAGE IS UNDER CONSTRUCTION
 			<br>
 			<img src="images/in-working.png" alt="Under construction" class="image2">
+			<br>
+			I am writing new code for the chat system
 		</div>
 	</div>
 	<br>

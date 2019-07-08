@@ -2,14 +2,16 @@ let dot = 1;
 localStorage.setItem(dot, "dot");
 let dot2 = localStorage.getItem("dot");
 function addItem() {
-    let newItem = document.createElement("li");
-    newItem.innerHTML = document.getElementById("box").value;
-    newItem.id = "dot" + dot2;
-    dot++;
-    localStorage.setItem(dot, "dot");
-    newItem.onclick = removeItem;
-    document.getElementById("list").appendChild(newItem);
-    saveList();
+    if(document.getElementById("box").value != "" && document.getElementById("box").value != " ") {
+        let newItem = document.createElement("li");
+        newItem.innerHTML = document.getElementById("box").value;
+        newItem.id = "dot" + dot2;
+        dot++;
+        localStorage.setItem(dot, "dot");
+        newItem.onclick = removeItem;
+        document.getElementById("list").appendChild(newItem);
+        saveList();
+    }
 }
 function removeItem() {
     document.getElementById("list").removeChild(this);

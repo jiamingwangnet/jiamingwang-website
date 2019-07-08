@@ -24,19 +24,19 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/model.js"></script>
     <script src="js/pic.js"></script>
-    <script src="js/time.js"></script>
+    <script src="js/profile.js"></script>
     <script src="js/names.js"></script>
     <link rel="stylesheet" href="css/display.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
-<body onload="getPic(); getName();">
+<body onload="getProfileInfo('both'); time();;">
         <div class="nav">
 
                 <script src="js/nav.js"></script>
             </div>
             <div class="model">
                     <button class="exit" onclick="hideModel()">X</button>
-                    <img src="images/defaut.bmp" alt="your image" class="modelImage">
+                    <img src="images/defaut.bmp" alt="your image" class="modelImage" id="modelImage">
                     <!-- <div class="divButton">
                          <input type='file' onchange="readURL(this);" class="choosePicInput" value="choose image" />
                         

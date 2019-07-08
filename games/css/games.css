@@ -23,7 +23,7 @@
     z-index: 1;
 }
 .gameButtonBoth {
-    width: 20%;
+    width: auto;
     height: 50%;
     border: 7px solid gray;
     background-color: rgb(194, 194, 194);
@@ -32,7 +32,7 @@
 }
 
 .gameButtonBoth:active {
-    width: 20%;
+    width: auto;
     height: 50%;
     border: 5px solid gray;
     background-color: rgb(194, 194, 194);

@@ -1,4 +1,4 @@
-Jiaming's website sourcecode
+Jiaming's website source code
 There will be updates
 
 **no bad stuff**
@@ -14,6 +14,13 @@ There will be updates
 * finished News page
 * games in working
 * updated old games with my latest brain
+* added weird stuff (hint: view the console)
+
+Other stuff
+----
+##Technical Notes
+* your profile is now in a object literal
+
 :smiley:
 ----
 website: 

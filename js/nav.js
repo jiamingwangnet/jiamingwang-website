@@ -2,8 +2,8 @@ $(function() {
     let nav = '<a href="index.html" class="center"><i class="fas fa-home colour"></i> Home</a>'+
    ' <div class="dropdown">'+
         '<button id="dropdownMenuButton" class="down" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">' + 
-        '<i class="fas fa-bars menuIcon down" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"'+
-            'aria-expanded="false"></i>' +
+        '<i class="fas fa-bars menuIcon down" '+
+            '></i>' +
         '</button>'+
 
         '<div class="dropdown-menu blueBack" aria-labelledby="dropdownMenuButton">'+

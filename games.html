@@ -10,152 +10,147 @@
 	<link href="https://fonts.googleapis.com/css?family=Orbitron:400,900" rel="stylesheet">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
 		integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
-        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+		integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
 	<link href="css/lib/NES.css-master/css/nes.css" rel="stylesheet" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="js/model.js"></script>
 	<script src="js/pic.js"></script>
-	<script src="js/time.js"></script>
+	<script src="js/profile.js"></script>
 	<script src="js/names.js"></script>
 	<link rel="stylesheet" href="css/display.css">
 	<link rel="stylesheet" href="css/main.css">
 </head>
 
-<body onload="getPic(); getName();">
-		<div class="nav">
+<body onload="getProfileInfo('both'); time();;">
+	<div class="nav">
 
-				<script src="js/nav.js"></script>
-			</div>
-			<div class="model">
-					<button class="exit" onclick="hideModel()">X</button>
-					<img src="images/defaut.bmp" alt="your image" class="modelImage">
-					<!-- <div class="divButton">
+		<script src="js/nav.js"></script>
+	</div>
+	<div class="model">
+		<button class="exit" onclick="hideModel()">X</button>
+		<img src="images/defaut.bmp" alt="your image" class="modelImage" id="modelImage">
+		<!-- <div class="divButton">
 						 <input type='file' onchange="readURL(this);" class="choosePicInput" value="choose image" />
 						
 					</div> -->
-					<div class="input-group mb-3">
-							<div class="input-group-prepend">
-							</div>
-							<div class="custom-file">
-									<input type="file" class="custom-file-input" id="inputGroupFile03" onchange="readURL(this);" aria-describedby="inputGroupFileAddon03">
-							  <label class="custom-file-label" for="inputGroupFile03">Find Image</label>
-							</div>
-						  </div>
-					
-					<h2 class="name">name</h2>
-					<button onclick="names()" class="button">change name</button>
-				</div>
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+			</div>
+			<div class="custom-file">
+				<input type="file" class="custom-file-input" id="inputGroupFile03" onchange="readURL(this);"
+					aria-describedby="inputGroupFileAddon03">
+				<label class="custom-file-label" for="inputGroupFile03">Find Image</label>
+			</div>
+		</div>
+
+		<h2 class="name">name</h2>
+		<button onclick="names()" class="button">change name</button>
+	</div>
 	<div class="newTitles">
 		<h1>some games I made</h1>
 	</div>
 	<div class="introduction blue">
 		some really bad games. Nothing really cool here. Just saying...
 	</div>
-	<div class="long" onclick="sayHi()"></div>
+	<h1 class="blue big center">Latest</h1>
 	<div class="centerContainer">
-
-			<a href="games/game.html">
-				<div class="thumbnail">
-					<img src="images/Game.png" class="imgs">
-					<a href="games/game.html">
-						<h3>click on diamond</h3>
-						<div class="playButton">PLAY</div>
-					</a>
-					<p>
-						<br> click on the diamonds but not on the dirt!
-					</p>
-				</div>
-			</a>
-
-			<a href="games/game2.html">
-				<div class="thumbnail">
-					<img src="images/game2.png" class="imgs">
-					<a href="games/game2.html">
-						<h3>jewelry maker NEW!</h3>
-						<div class="playButton">PLAY</div>
-					</a>
-					<p>
-						<br> make a jewelry by clicking on buttons!
-					</p>
-				</div>
-			</a>
-	
-			<a href="games/game3.html">
-				<div class="thumbnail">
-					<img src="images/game3.png" class="imgs">
-					<a href="games/game3.html">
-						<h3>match fruits</h3>
-						<div class="playButton">PLAY</div>
-					</a>
-					<p>
-						<br> match the same fruits togeter by clicking to win!
-					</p>
-				</div>
-			</a>
-
-			<a href="games/game5.html">
-				<div class="thumbnail">
-					<img src="images/game5.png" class="imgs">
-					<a href="games/game5.html">
-						<h3>Clicker</h3>
-						<div class="playButton">PLAY</div>
-					</a>
-					<p>
-						<br> click the button and make your number higher
-					</p>
-				</div>
-			</a>
-
-			<a href="games/game6.html">
-				<div class="thumbnail">
-					<img src="images/game6.png" class="imgs">
-					<a href="games/game6.html">
-						<h3>modified snake</h3>
-						<div class="playButton">PLAY</div>
-					</a>
-					<p>
-						<br> it's snake but a little modified
-					</p>
-				</div>
-			</a>
-
-			<a href="games/game7.html">
-				<div class="thumbnail">
-					<img src="images/game7.png" class="imgs">
-					<a href="games/game7.html">
-						<h3>modified pong</h3>
-						<div class="playButton">PLAY</div>
-					</a>
-					<p>
-						<br> it's pong but a little modified
-					</p>
-				</div>
-			</a>
-
-			<a href="games/game8.html">
-				<div class="thumbnail">
-					<img src="images/game8.png" class="imgs">
-					<a href="games/game8.html">
-						<h3>Bear Ecsape</h3>
-						<div class="playButton">PLAY</div>
-					</a>
-					<p>
-						<br> RUN FROM THE BROWN THING!!! AHHHHH!!
-					</p>
-				</div>
-			</a>
-			
-		</div>
+		
+		<a href="games/game8.html">
+			<div class="latestThumbnail">
+				<img src="images/game8.png" class="imgs">
+				<a href="games/game8.html">
+					<h3>Bear Ecsape</h3>
+					<div class="playButton">PLAY</div>
+				</a>
+				<p>
+					<br> RUN FROM THE BROWN THING!!! AHHHHH!!
+				</p>
+			</div>
+		</a>
+		<h1 class="blue center">Others</h1>
+		<a href="games/game7.html">
+			<div class="thumbnail">
+				<img src="images/game7.png" class="imgs">
+				<a href="games/game7.html">
+					<h3>modified pong</h3>
+					<div class="playButton">PLAY</div>
+				</a>
+				<p>
+					<br> it's pong but a little modified
+				</p>
+			</div>
+		</a>
+		<a href="games/game6.html">
+			<div class="thumbnail">
+				<img src="images/game6.png" class="imgs">
+				<a href="games/game6.html">
+					<h3>modified snake</h3>
+					<div class="playButton">PLAY</div>
+				</a>
+				<p>
+					<br> it's snake but a little modified
+				</p>
+			</div>
+		</a>
+		<a href="games/game5.html">
+			<div class="thumbnail">
+				<img src="images/game5.png" class="imgs">
+				<a href="games/game5.html">
+					<h3>Clicker</h3>
+					<div class="playButton">PLAY</div>
+				</a>
+				<p>
+					<br> click the button and make your number higher
+				</p>
+			</div>
+		</a>
+		<a href="games/game3.html">
+			<div class="thumbnail">
+				<img src="images/game3.png" class="imgs">
+				<a href="games/game3.html">
+					<h3>match fruits</h3>
+					<div class="playButton">PLAY</div>
+				</a>
+				<p>
+					<br> match the same fruits togeter by clicking to win!
+				</p>
+			</div>
+		</a>
+		<a href="games/game2.html">
+			<div class="thumbnail">
+				<img src="images/game2.png" class="imgs">
+				<a href="games/game2.html">
+					<h3>jewelry maker NEW!</h3>
+					<div class="playButton">PLAY</div>
+				</a>
+				<p>
+					<br> make a jewelry by clicking on buttons!
+				</p>
+			</div>
+		</a>
+		<a href="games/game.html">
+			<div class="thumbnail">
+				<img src="images/Game.png" class="imgs">
+				<a href="games/game.html">
+					<h3>click on diamond</h3>
+					<div class="playButton">PLAY</div>
+				</a>
+				<p>
+					<br> click on the diamonds but not on the dirt!
+				</p>
+			</div>
+		</a>
+	</div>
 	<div class="footer">
 		<b>
 			<h3 id="myVisits"></h3>
