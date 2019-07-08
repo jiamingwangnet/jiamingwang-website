@@ -18,7 +18,7 @@ There will be updates
 
 Other stuff
 ----
-##Technical Notes
+## Technical Notes
 * your profile is now in a object literal
 
 :smiley:
