@@ -130,6 +130,21 @@ body {
     padding: 10px;
     word-wrap: break-word;
 }
+.message {
+    background-color: #0083ff;
+    padding: 10px;
+    border: 2px solid blue;
+    margin: 10px;
+    border-top-left-radius: 10%;
+    border-bottom-right-radius: 10%;
+}
+.textarea {
+  width: 80%;
+  height: 300px;
+  outline: none;
+  resize: none;
+}
+
 .blue {
     color: blue;
 }
@@ -161,6 +176,12 @@ body {
 }
 
 .image {
+    border-radius: 50%;
+    height: 100%;
+    width: 8%;
+    display: inline-block;
+}
+.image3 {
     border-radius: 50%;
     height: 100%;
     width: 8%;

@@ -15,6 +15,8 @@ There will be updates
 * games in working
 * updated old games with my latest brain
 * added weird stuff (hint: view the console)
+* making the chat
+* total visits count added
 
 Other stuff
 ----
@@ -26,4 +28,4 @@ Other stuff
 website: 
 [jiamingwang.net](https://jiamingwang.net)
 
-v2.0.0 pre 14
+v2.0.0

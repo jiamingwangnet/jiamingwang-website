@@ -22,12 +22,13 @@
 	<script src="js/pic.js"></script>
 	<script src="js/profile.js"></script>
 	<script src="js/names.js"></script>
+	<script src="js/aws.js"></script>
 	<link rel="stylesheet" href="css/main.css">
 	<title>Chat</title>
 	<link rel="shortcut icon" href="images/icon.ico" type="image/x-icon">
 </head>
 
-<body onload="getProfileInfo('both'); time();; time();">
+<body onload="getProfileInfo('both'); loadMessages();">
 	<div class="nav">
 
 		<script src="js/nav.js"></script>
@@ -52,44 +53,16 @@
 		<h2 class="name">name</h2>
 		<button onclick="names()" class="button">change name</button>
 	</div>
-	<!-- <div style="text-align: center;">
-				<i class="far fa-comment-dots" style="font-size:90px;color:blue;"></i>
-				<div>
-					<div style="text-align: center">
-						<ul id="commentList" onload="reloadComments()"></ul>
-					</div>
-					<div style="text-align: center">
-						User name: 
-						<p id="myName" style="display: inline-block;"></p>
-						<script>
-							if(myGoodName != null) {
-								$("#myName").html(myGoodName);
-							} else {
-								$("#myName").html("name");
-							}
-						</script>
-					</div>
-					<div style="text-align: center">
-						write: <br>
-						<textarea id="comment" rows="12" cols="90" style="border-radius: 10px; width:100; color:#003d66;"
-							class="input is-success"></textarea>
-					</div>
-					<div style="text-align: center">
-						<button onclick="addComment()" class="btn is-primary">send</button>
-					</div>
-					<div style="text-align: center">
-						Delete all password: <input id="password" type="password" class="input is-success"> <button
-							onclick="deleteAllComments()" class="btn is-primary">DELETE ALL MESSAGES</button>
-					</div>
-				</div>
-				<div id="result"></div>
-				<p id="adminPassword"></p>
-				<script src="js/comments.js"></script>
-				<script>
-					var chatPasswords = readPassword();
-					document.getElementById("adminPassword").innerHTML = "delete password:" + chatPasswords[0];
-				</script> -->
+	<div id="messages">
+	</div>
+	<br>
 	<div class="center">
+			<textarea name="text" id="text" class="inlineBlock textarea"></textarea>
+			<br>
+			<button class="btn btn-primary" onclick="sendMessage()">send</button>
+	</div>
+	
+	<!-- <div class="center">
 		<div class="error">
 			SORRY!! THIS PAGE IS UNDER CONSTRUCTION
 			<br>
@@ -97,7 +70,7 @@
 			<br>
 			I am writing new code for the chat system
 		</div>
-	</div>
+	</div> -->
 	<br>
 	<div class="footer">
 		<b>
