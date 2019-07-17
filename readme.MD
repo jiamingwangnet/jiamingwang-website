@@ -5,7 +5,7 @@ There will be updates
 
 # Other stuff
 
-## Update 2.0.0 pre 13
+## Update 2.0.0
 
 * new layout
 * BootStrap
