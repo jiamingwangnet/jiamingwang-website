@@ -24,142 +24,146 @@
     <script src="js/time.js"></script>
     <script src="js/names.js"></script>
     <script src="js/aws.js"></script>
+    <link rel="stylesheet" type="text/css" href="lib/fullpage.css" />
+    <script type="text/javascript" src="lib/fullpage.js"></script>
     <link rel="stylesheet" href="css/main.css">
-    <title>JIAMING WANG</title>
+    <title>Jiaming Wang</title>
     <link rel="shortcut icon" href="images/icon.ico" type="image/x-icon">
-
-
 </head>
 
 <body onload="getProfileInfo('both'); time(); load();">
-    <div class="title">
-        <div class="animation1"></div>
-        <br>
-        <div class="animation2"></div>
-        <p class="titleText">JIAMING WANG</p>
-        <br>
-        <p class="titleText small">Team Bobler</p>
-    </div>
     <div class="nav">
-
         <script src="js/nav.js"></script>
     </div>
-    <div class="introduction">Welcome user! My name is Jiaming, welcome to my website. There is many games you can
-        play, along with videos and news (my bad writing). But weird stuff do happen, so I put a random page just for
-        that! Have fun!
-    </div>
-    <br>
-    <br>
-    <div class="profile">
-        <img src="images/defaut.bmp" alt="your image" class="image">
-        <span class="name">Name</span>
-        <h1>notifications</h1>
-        <div id="notifications">
+    <div id="fullpage">
+        <div class="title section">
+            <h2 class="titleText">JIAMING WANG</h2>
         </div>
-        <script src="js/notify.js"></script>
-    </div>
-    <div class="model">
-        <button class="exit" onclick="hideModel()">&times;</button>
-        <img src="images/defaut.bmp" alt="your image" class="modelImage" id="modelImage" id="modelImage">
-        <!-- <div class="divButton">
-                 <input type='file' onchange="readURL(this);" class="choosePicInput" value="choose image" />
-                
-            </div> -->
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
+        <div class="section">
+
+
+
+            <div class="profile">
+                <img src="images/defaut.bmp" alt="your image" class="image">
+                <span class="name">Name</span>
+                <h1>notifications</h1>
+                <div id="notifications">
+                </div>
+                <script src="js/notify.js"></script>
             </div>
-            <div class="custom-file">
-                <input type="file" class="custom-file-input" id="inputGroupFile03" onchange="readURL(this);"
-                    aria-describedby="inputGroupFileAddon03">
-                <label class="custom-file-label" for="inputGroupFile03">Find Image</label>
+            <div class="model">
+                <button class="exit" onclick="hideModel()">&times;</button>
+                <img src="images/defaut.bmp" alt="your image" class="modelImage" id="modelImage" id="modelImage">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                    </div>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="inputGroupFile03" onchange="readURL(this);"
+                            aria-describedby="inputGroupFileAddon03">
+                        <label class="custom-file-label" for="inputGroupFile03">Find Image</label>
+                    </div>
+                </div>
+
+                <h2 class="name">name</h2>
+                <button onclick="names()" class="button">change name</button>
             </div>
+            <div class="time">
+                <h1 id="time"></h1>
+            </div>
+            <div class="datetime"></div>
+
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br><br><br><br><br><br><br><br><br><br>
+        <div class="section boardContainer ">
+                <div class="horizontal-scrolling">
+                        <div class="textLeft ">
+                            <h2>Welcome to Jiaming's Home Page</h2>
+                            <h2>I am Jiaming Wang</h2>
+            
+            
+                            <div class="smallText">
+                            Welcome user! My name is Jiaming, welcome to my website. <br>
+                            There is many games you can play, along with videos and news (my bad writing). <br>
+                            But weird stuff do happen, so I put a random page just for that!<br>
+                            Have fun!<br>
+                            </div>
+                            
+                        </div>
+                        <img src="images/gifs/hello.gif" class="catPicsRight">
+                    </div>
+                    <div class="horizontal-scrolling">
+                            <h3 class="center">Here is the latest news about me</h3>
+                    </div>
         </div>
 
-        <h2 class="name">name</h2>
-        <button onclick="names()" class="button">change name</button>
-    </div>
-    <div class="time">
-        <h1 id="time"></h1>
-    </div>
-    <div class="datetime"></div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br><br><br><br><br><br><br><br><br><br>
+        <div class="section boardContainer">
+            <img src="images/ipad stuff 002.JPG" alt="cat" class="catPicsLeft height80">
+            <div class="textRight">
+                <h1>time for... <br>the good stuff</h1>
+                <ul>
+                    <li>I haven't played games for years</li>
+                    <li>I like cats</li>
+                    <li>cats are cool</li>
+                    <li>coding is the best</li>
+                    <li>I can't live without technology</li>
+                    <li>I speak chinese</li>
+                    <li>您好，我是嘉铭</li>
+                    <li>I have a cousin</li>
+                </ul>
+                <p>My cat is a fat one.</p>
 
-    <div class="welcome">
-        <h2>Welcome to Jiaming's Home Page<br><br><br>
-            <h5>hello I am Hu Zi</h5>
-            <a href="TB_code/idea/Tanya/learn/HTML/hu_zi.html"><img src="images/huzi.bmp" alt="hu zi" class='huzi'></a>
-        </h2>
-    </div>
-    <div class="board">
-        <div class="boardContainer">
-            <img src="images/gifs/hello.gif" class="catPicsRight">
+            </div>
+
+            <!-- <img src="images/ipad stuff 024.JPG" alt="code" class="catPics"> -->
+        </div>
+        <br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br>
+        <div class="section boardContainer ">
+
+            <img src="images/ipad stuff 024.JPG" alt="code" class="catPicsRight">
             <div class="textLeft">
-                <h3>HELLO:</h3>
-                <h2>I am Jiaming Wang</h2>
-
-                <i class="far fa-gem diamond"></i>
-                <b>
-                    <p>diamonds</p>
-                </b>
+                <h1>I code stuff</h1>
+                <p>I made this website because I wanted to. <br> I code games and soon I will play around
+                    with<br>databases.
+                </p>
             </div>
-        </div>
 
-    </div>
-    <div class="boardContainer">
-        <img src="images/ipad stuff 002.JPG" alt="cat" class="catPicsLeft">
-        <div class="textRight">
-            <h1>time for... <br>the good stuff</h1>
-            <ul>
-                <li>I haven't played games for years</li>
-                <li>I like cats</li>
-                <li>cats are cool</li>
-                <li>coding is the best</li>
-                <li>I can't live without technology</li>
-                <li>I speak chinese</li>
-                <li>您好，我是嘉铭</li>
-                <li>I have a cousin</li>
-            </ul>
-            <p>My cat is a fat one.</p>
+
 
         </div>
-
-        <!-- <img src="images/ipad stuff 024.JPG" alt="code" class="catPics"> -->
-
-
     </div>
     </div>
-    <div class="boardContainer">
-        <img src="images/ipad stuff 024.JPG" alt="code" class="catPicsRight">
-        <div class="textLeft">
-            <h1>I code stuff</h1>
-            <p>I made this website because I wanted to. <br> I code games and soon I will play around with<br>databases.
-            </p>
-        </div>
 
 
 
-    </div>
-    </div>
-    </div>
-    <!--
-            __    __                                      __                                                                __      __        __                                      __                      __ 
-           /  \  /  |                                    /  |                                                              /  |    /  |      /  |                                    /  |                    /  |
-           $$  \ $$ |  ______   __   __   __         ____$$ |  ______          _______   ______   _____  ____    ______   _$$ |_   $$ |____  $$/  _______    ______          ______  $$ |  _______   ______  $$ |
-           $$$  \$$ | /      \ /  | /  | /  |       /    $$ | /      \        /       | /      \ /     \/    \  /      \ / $$   |  $$      \ /  |/       \  /      \        /      \ $$ | /       | /      \ $$ |
-           $$$$  $$ |/$$$$$$  |$$ | $$ | $$ |      /$$$$$$$ |/$$$$$$  |      /$$$$$$$/ /$$$$$$  |$$$$$$ $$$$  |/$$$$$$  |$$$$$$/   $$$$$$$  |$$ |$$$$$$$  |/$$$$$$  |      /$$$$$$  |$$ |/$$$$$$$/ /$$$$$$  |$$ |
-           $$ $$ $$ |$$ |  $$ |$$ | $$ | $$ |      $$ |  $$ |$$ |  $$ |      $$      \ $$ |  $$ |$$ | $$ | $$ |$$    $$ |  $$ | __ $$ |  $$ |$$ |$$ |  $$ |$$ |  $$ |      $$    $$ |$$ |$$      \ $$    $$ |$$/ 
-           $$ |$$$$ |$$ \__$$ |$$ \_$$ \_$$ |      $$ \__$$ |$$ \__$$ |       $$$$$$  |$$ \__$$ |$$ | $$ | $$ |$$$$$$$$/   $$ |/  |$$ |  $$ |$$ |$$ |  $$ |$$ \__$$ |      $$$$$$$$/ $$ | $$$$$$  |$$$$$$$$/  __ 
-           $$ | $$$ |$$    $$/ $$   $$   $$/       $$    $$ |$$    $$/       /     $$/ $$    $$/ $$ | $$ | $$ |$$       |  $$  $$/ $$ |  $$ |$$ |$$ |  $$ |$$    $$ |      $$       |$$ |/     $$/ $$       |/  |
-           $$/   $$/  $$$$$$/   $$$$$/$$$$/         $$$$$$$/  $$$$$$/        $$$$$$$/   $$$$$$/  $$/  $$/  $$/  $$$$$$$/    $$$$/  $$/   $$/ $$/ $$/   $$/  $$$$$$$ |       $$$$$$$/ $$/ $$$$$$$/   $$$$$$$/ $$/ 
-                                                                                                                                                           /  \__$$ |                                            
-                                                                                                                                                           $$    $$/                                             
-                                                                                                                                                            $$$$$$/                                               -->
-    <div class="footer">            
-        <b>
 
-            <span><h3>Total visits: </h3></span><h3 id="result"></h3>
-            <h5>version 2.0.0 pre 14</h5>
-        </b>
-    </div>
+
+    <script>
+        new fullpage('#fullpage', {
+            //options here
+            autoScrolling: true,
+            scrollHorizontally: true,
+            anchors: ["title", "settings", "hello", "hamish", "code"],
+            slideSelector: '.horizontal-scrolling',
+            navigation: true,
+            slidesNavigation: true,
+            controlArrows: true
+        });
+
+        //methods
+        fullpage_api.setAllowScrolling(true);
+    </script>
 </body>
 
 </html>
