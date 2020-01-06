@@ -1,0 +1,57 @@
+.BearEcsape {
+    background-image: url("../images/game8.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.ModPong {
+    background-image: url("../images/game7.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.ModSnake {
+    background-image: url("../images/game6.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.Clicker {
+    background-image: url("../images/game5.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.matchfruits {
+    background-image: url("../images/game3.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.jewelryMaker {
+    background-image: url("../images/game2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.clickOnDiamond {
+    background-image: url("../images/Game.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*random*/
+
+.Nothing {
+    background-image: url("../images/Q.bmp");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* News */
+
+.News7 {
+    background-image: url("../images/news7.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}

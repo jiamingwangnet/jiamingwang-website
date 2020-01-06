@@ -27,8 +27,11 @@
 	<script src="js/pic.js"></script>
 	<script src="js/profile.js"></script>
 	<script src="js/names.js"></script>
+	<link rel="stylesheet" type="text/css" href="lib/fullpage.css" />
+	<script type="text/javascript" src="lib/fullpage.js"></script>
 	<link rel="stylesheet" href="css/display.css">
 	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/imageBackgrounds.css">
 </head>
 
 <body onload="getProfileInfo('both'); time();;">
@@ -56,100 +59,114 @@
 		<h2 class="name">name</h2>
 		<button onclick="names()" class="button">change name</button>
 	</div>
-	<div class="newTitles">
-		<h1>some games I made</h1>
-	</div>
-	<div class="introduction blue">
-		some really bad games. Nothing really cool here. Just saying...
-	</div>
-	<h1 class="blue big center">Latest</h1>
-	<div class="centerContainer">
-		
-		<a href="games/game8.html">
-			<div class="latestThumbnail">
-				<img src="images/game8.png" class="imgs">
+	<div id="fullpage">
+
+		<div class="games title  section">
+			<h2 class="titleText textShadow">My Games</h2>
+		</div>
+		<div class="section">
+				<div class="introduction">
+					some really bad games. Nothing really cool here. Just saying...
+				</div>
+		</div>
+
+
+			<div class="section BearEcsape center">
 				<a href="games/game8.html">
-					<h3>Bear Ecsape</h3>
-					<div class="playButton">PLAY</div>
+					<div class="textShadow">
+
+
+						<a href="games/game8.html">
+							<h3>Bear Ecsape</h3>
+							<div class="playButton">PLAY</div>
+						</a>
+						<p>
+							<br> RUN FROM THE BROWN THING!!! AHHHHH!!
+						</p>
+					</div>
 				</a>
-				<p>
-					<br> RUN FROM THE BROWN THING!!! AHHHHH!!
-				</p>
 			</div>
-		</a>
-		<h1 class="blue center">Others</h1>
-		<a href="games/game7.html">
-			<div class="thumbnail">
-				<img src="images/game7.png" class="imgs">
-				<a href="games/game7.html">
-					<h3>modified pong</h3>
-					<div class="playButton">PLAY</div>
-				</a>
-				<p>
-					<br> it's pong but a little modified
-				</p>
-			</div>
-		</a>
-		<a href="games/game6.html">
-			<div class="thumbnail">
-				<img src="images/game6.png" class="imgs">
-				<a href="games/game6.html">
-					<h3>modified snake</h3>
-					<div class="playButton">PLAY</div>
-				</a>
-				<p>
-					<br> it's snake but a little modified
-				</p>
-			</div>
-		</a>
-		<a href="games/game5.html">
-			<div class="thumbnail">
-				<img src="images/game5.png" class="imgs">
-				<a href="games/game5.html">
-					<h3>Clicker</h3>
-					<div class="playButton">PLAY</div>
-				</a>
-				<p>
-					<br> click the button and make your number higher
-				</p>
-			</div>
-		</a>
-		<a href="games/game3.html">
-			<div class="thumbnail">
-				<img src="images/game3.png" class="imgs">
-				<a href="games/game3.html">
-					<h3>match fruits</h3>
-					<div class="playButton">PLAY</div>
-				</a>
-				<p>
-					<br> match the same fruits togeter by clicking to win!
-				</p>
-			</div>
-		</a>
-		<a href="games/game2.html">
-			<div class="thumbnail">
-				<img src="images/game2.png" class="imgs">
-				<a href="games/game2.html">
-					<h3>jewelry maker NEW!</h3>
-					<div class="playButton">PLAY</div>
-				</a>
-				<p>
-					<br> make a jewelry by clicking on buttons!
-				</p>
-			</div>
-		</a>
-		<a href="games/game.html">
-			<div class="thumbnail">
-				<img src="images/Game.png" class="imgs">
-				<a href="games/game.html">
-					<h3>click on diamond</h3>
-					<div class="playButton">PLAY</div>
-				</a>
-				<p>
-					<br> click on the diamonds but not on the dirt!
-				</p>
-			</div>
-		</a>
+			<div class="section ModPong center">
+			<a href="games/game7.html">
+				<div class="textShadow">
+					<a href="games/game7.html">
+						<h3>modified pong</h3>
+						<div class="playButton">PLAY</div>
+					</a>
+					<p>
+						<br> it's pong but a little modified
+					</p>
+				</div>
+			</a>
+		</div>
+		<div class="section ModSnake center">
+			<a href="games/game6.html">
+				<div class="textShadow">
+					<a href="games/game6.html">
+						<h3>modified snake</h3>
+						<div class="playButton">PLAY</div>
+					</a>
+					<p>
+						<br> it's snake but a little modified
+					</p>
+				</div>
+			</a>
+		</div>
+		<div class="section Clicker center">
+			<a href="games/game5.html">
+				<div class="textShadow">
+
+					<a href="games/game5.html">
+						<h3>Clicker</h3>
+						<div class="playButton">PLAY</div>
+					</a>
+					<p>
+						<br> click the button and make your number higher
+					</p>
+				</div>
+			</a>
+		</div>
+		<div class="section matchfruits center">
+			<a href="games/game3.html">
+				<div class="textShadow">
+					<a href="games/game3.html">
+						<h3>match fruits</h3>
+						<div class="playButton">PLAY</div>
+					</a>
+					<p class="teal">
+						<br> match the same fruits togeter by clicking to win!
+					</p>
+				</div>
+			</a>
+		</div>
+		<div class="section jewelryMaker center">
+			<a href="games/game2.html">
+				<div class="textShadow">
+			
+					<a href="games/game2.html">
+						<h3>jewelry maker NEW!</h3>
+						<div class="playButton">PLAY</div>
+					</a>
+					<p>
+						<br> make a jewelry by clicking on buttons!
+					</p>
+				</div>
+			</a>
+		</div>
+			<div class="section clickOnDiamond center">
+			<a href="games/game.html">
+				<div class="textShadow">
+
+					<a href="games/game.html">
+						<h3>click on diamond</h3>
+						<div class="playButton">PLAY</div>
+					</a>
+					<p>
+						<br> click on the diamonds but not on the dirt!
+					</p>
+				</div>
+			</a>
+		</div>
 	</div>
 	<div class="footer">
 		<b>
@@ -158,6 +175,22 @@
 			<h5>version 2.0.0 pre 14</h5>
 		</b>
 	</div>
+
+	<script>
+		new fullpage('#fullpage', {
+			//options here
+			autoScrolling: true,
+			scrollHorizontally: true,
+			anchors: ["title", "intro", "BearEcsape", "modifiedpong", "modifiedsnake","clicker", "matchfruits"],
+			slideSelector: '.horizontal-scrolling',
+			navigation: true,
+			slidesNavigation: true,
+			controlArrows: true
+		});
+
+		//methods
+		fullpage_api.setAllowScrolling(true);
+	</script>
 
 </body>
 

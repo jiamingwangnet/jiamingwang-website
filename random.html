@@ -8,36 +8,38 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link href="https://fonts.googleapis.com/css?family=Orbitron:400,900" rel="stylesheet">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-		integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
-        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+		integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+		integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
 	<link href="css/lib/NES.css-master/css/nes.css" rel="stylesheet" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="js/model.js"></script>
 	<script src="js/pic.js"></script>
 	<script src="js/profile.js"></script>
 	<script src="js/names.js"></script>
-	<script src="js/randomLink.js"></script>
-	<script src="js/randomDice.js"></script>
+	<link rel="stylesheet" type="text/css" href="lib/fullpage.css" />
+	<script type="text/javascript" src="lib/fullpage.js"></script>
 	<link rel="stylesheet" href="css/display.css">
 	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/imageBackgrounds.css">
+	
 </head>
 
 <body onload="getProfileInfo('both'); time();;">
-		<div class="nav">
+	<div class="nav">
 
-				<script src="js/nav.js"></script>
-			</div>
+		<script src="js/nav.js"></script>
+	</div>
 	<div class="model">
 		<button class="exit" onclick="hideModel()">X</button>
 		<img src="images/defaut.bmp" alt="your image" class="modelImage" id="modelImage">
@@ -46,94 +48,132 @@
 			
 		</div> -->
 		<div class="input-group mb-3">
-				<div class="input-group-prepend">
-				</div>
-				<div class="custom-file">
-						<input type="file" class="custom-file-input" id="inputGroupFile03" onchange="readURL(this);" aria-describedby="inputGroupFileAddon03">
-				  <label class="custom-file-label" for="inputGroupFile03">Find Image</label>
-				</div>
-			  </div>
-		
+			<div class="input-group-prepend">
+			</div>
+			<div class="custom-file">
+				<input type="file" class="custom-file-input" id="inputGroupFile03" onchange="readURL(this);"
+					aria-describedby="inputGroupFileAddon03">
+				<label class="custom-file-label" for="inputGroupFile03">Find Image</label>
+			</div>
+		</div>
+	
+
 		<h2 class="name">name</h2>
 		<button onclick="names()" class="button">change name</button>
-	</div>
-	<i class="fas fa-dice-six blue big" onclick="random()" id="dice"></i>
-	<div class="newTitles">
-		<h1>Here's some random things I made</h1>
-	</div>
-	<div class="introduction blue">just ???????????????????????</div>
+		</div>
+		<div id="fullpage">
 
-	<div class="centerContainer">
-		<a href="random/nothing.html">
-			<div class="thumbnail">
-				<img src="images/Q.bmp" class="imgs">
+			<div class="Nothing title  section">
+				<h2 class="titleText textShadow">Stuff</h2>
+			</div>
+			<div class="section">
+				<div class="introduction">
+					????????????????????????????????
+				</div>
+			</div>
+
+			<div class="section Nothing center">
 				<a href="random/nothing.html">
-					<h3>link to nothing</h3>
-					<div class="playButton">PLAY</div>
+					<div class="">
+
+
+						<a href="random/nothing.html">
+							<h3>Nothing</h3>
+							<div class="playButton">PLAY</div>
+						</a>
+						<p>
+							<br> 
+						</p>
+					</div>
 				</a>
-				<p>
-					<br>????????????????????????????????
-				</p>
 			</div>
-		</a>
-		<a href="random/nonononon.html">
-			<div class="thumbnail">
-				<img src="images/Q.bmp" class="imgs">
+
+				<div class="section Nothing center">
 				<a href="random/nonononon.html">
-					<h3>no no no</h3>
-					<div class="playButton">PLAY</div>
-				</a>
-				<p>
-					<br>????????????????????????????????
-				</p>
-			</div>
-		</a>
+					<div class="">
 
-		<a href="random/diamond.html">
-			<div class="thumbnail">
-				<img src="images/Q.bmp" class="imgs">
+
+						<a href="random/nonononon.html">
+							<h3>no no no</h3>
+							<div class="playButton">PLAY</div>
+						</a>
+						<p>
+							<br> 
+						</p>
+					</div>
+				</a>
+			</div>
+			<div class="section Nothing center">
 				<a href="random/diamond.html">
-					<h3>get diamond</h3>
-					<div class="playButton">PLAY</div>
+					<div class="">
+
+
+						<a href="random/diamond.html">
+							<h3>get diamond</h3>
+							<div class="playButton">PLAY</div>
+						</a>
+						<p>
+							<br> 
+						</p>
+					</div>
 				</a>
-				<p>
-					<br>????????????????????????????????
-				</p>
 			</div>
-		</a>
-		<a href="random/setTimeout.html">
-			<div class="thumbnail">
-				<img src="images/Q.bmp" class="imgs">
+			<div class="section Nothing center">
 				<a href="random/setTimeout.html">
-					<h3>I don't know</h3>
-					<div class="playButton">PLAY</div>
-				</a>
-				<p>
-					<br>????????????????????????????????
-				</p>
-			</div>
-		</a>
+					<div class="">
 
-		<a href="random/cool.html">
-			<div class="thumbnail">
-				<img src="images/Q.bmp" class="imgs">
+
+						<a href="random/setTimeout.html">
+							<h3>i dont konw</h3>
+							<div class="playButton">PLAY</div>
+						</a>
+						<p>
+							<br> 
+						</p>
+					</div>
+				</a>
+			</div>
+
+			<div class="section Nothing center">
 				<a href="random/cool.html">
-					<h3>this looks cool</h3>
-					<div class="playButton">PLAY</div>
-				</a>
-				<p>
-					<br>????????????????????????????????
-				</p>
-			</div>
-		</a>
-	</div>
-	<div class="footer">
-		<b>
-			<h3 id="myVisits"></h3>
+					<div class="">
 
-			<h5>version 2.0.0 pre 14</h5>
-		</b>
-	</div>
+
+						<a href="random/cool.html">
+							<h3>this is cool</h3>
+							<div class="playButton">PLAY</div>
+						</a>
+						<p>
+							<br> 
+						</p>
+					</div>
+				</a>
+			</div>
+
+		</div>
+
+				<script>
+					new fullpage('#fullpage', {
+						//options here
+						autoScrolling: true,
+						scrollHorizontally: true,
+						anchors: ["title", "intro", "nothing", "nonono", "getDiamond", "iDontKnow", "thisIsCool"],
+						slideSelector: '.horizontal-scrolling',
+						navigation: true,
+						slidesNavigation: true,
+						controlArrows: true
+					});
+
+					//methods
+					fullpage_api.setAllowScrolling(true);
+				</script>
+				<div class="footer">
+					<b>
+						<h3 id="myVisits"></h3>
+
+						<h5>version 2.0.0 pre 14</h5>
+					</b>
+				</div>
 </body>
 
 </html>

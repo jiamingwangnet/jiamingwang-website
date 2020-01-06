@@ -1,1 +1,22 @@
 [0728/115906.005:ERROR:file_io.cc(134)] WriteFile: The pipe is being closed. (0xE8)
+[1115/080037.345:ERROR:process_reader_win.cc(151)] SuspendThread: Access is denied. (0x5)
+[1115/080037.361:ERROR:process_reader_win.cc(151)] SuspendThread: Access is denied. (0x5)
+[1115/080037.361:ERROR:process_reader_win.cc(151)] SuspendThread: Access is denied. (0x5)
+[1115/080037.361:ERROR:process_reader_win.cc(151)] SuspendThread: Access is denied. (0x5)
+[1115/080037.361:ERROR:exception_snapshot_win.cc(98)] thread ID 5000 not found in process
+[0103/105249.402:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0103/110249.396:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0103/110249.397:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0103/110749.408:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0103/112249.410:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0103/113749.410:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0103/115249.417:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0103/120749.423:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0103/144318.048:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0103/155333.520:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0103/160833.520:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0103/162333.522:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0103/163833.522:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0103/165333.529:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0103/165759.630:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0106/103312.825:ERROR:crash_report_database_win.cc(469)] failed to stat report
